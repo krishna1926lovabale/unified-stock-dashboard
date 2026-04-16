@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="refresh" content="60">
+<title>ArthBot Signal CopyTrade Dashboard</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.1"></script>
+<style>
+:root {
+    --bg-primary: #0a0e17;
+    --bg-card: #111827;
+    --bg-header: #0f172a;
+    --border: #1e293b;
+    --text-primary: #e2e8f0;
+    --text-secondary: #94a3b8;
+    --text-muted: #64748b;
+    --green: #10b981;
+    --green-bg: rgba(16,185,129,0.12);
+    --red: #ef4444;
+    --red-bg: rgba(239,68,68,0.12);
+    --amber: #f59e0b;
+    --amber-bg: rgba(245,158,11,0.12);
+    --blue: #3b82f6;
+    --blue-bg: rgba(59,130,246,0.12);
+    --purple: #8b5cf6;
+    --purple-bg: rgba(139,92,246,0.12);
+    --cyan: #06b6d4;
+    --cyan-bg: rgba(6,182,212,0.12);
+    --gap: 14px;
+    --radius: 10px;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+    line-height: 1.5;
+    padding: 16px;
+}
+.dashboard { max-width: 1500px; margin: 0 auto; }
+.header {
+    background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 20px 24px;
+    margin-bottom: var(--gap);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+.header h1 { font-size: 1.4rem; font-weight: 700; display: flex; align-items: center; gap: 10px; }
+.header-meta { display: flex; align-items: center; gap: 16px; font-size: 0.8rem; color: var(--text-secondary); }
+.badge {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+.badge-paper { background: var(--blue-bg); color: var(--blue); }
+.badge-live { background: var(--green-bg); color: var(--green); }
+
+/* KPI Row */
+.kpi-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+    gap: var(--gap);
+    margin-bottom: var(--gap);
+}
+.kpi {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 16px 18px;
+    position: relative;
+    overflow: hidden;
+}
+.kpi::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+}
+.kpi.green::before { background: var(--green); }
+.kpi.red::before { background: var(--red); }
+.kpi.blue::before { background: var(--blue); }
+.kpi.amber::before { background: var(--amber); }
+.kpi.purple::before { background: var(--purple); }
+.kpi.cyan::before { background: var(--cyan); }
+.kpi-value { font-size: 1.7rem; font-weight: 800; margin-bottom: 2px; }
+.kpi-label { font-size: 0.7rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.8px; }
+.kpi.green .kpi-value { color: var(--green); }
+.kpi.red .kpi-value { color: var(--red); }
+.kpi.blue .kpi-value { color: var(--blue); }
+.kpi.amber .kpi-value { color: var(--amber); }
+.kpi.purple .kpi-value { color: var(--purple); }
+.kpi.cyan .kpi-value { color: var(--cyan); }
+
+/* Filters */
+.filter-bar {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 12px 16px;
+    margin-bottom: var(--gap);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: center;
+}
+.filter-bar label { font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; }
+.filter-bar select, .filter-bar input {
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 6px 10px;
+    font-size: 0.82rem;
+    outline: none;
+}
+.filter-bar select:focus, .filter-bar input:focus { border-color: var(--blue); }
+.filter-group { display: flex; align-items: center; gap: 6px; }
+
+/* Charts */
+.chart-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: var(--gap);
+    margin-bottom: var(--gap);
+}
+.chart-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 16px;
+}
+.chart-card h3 { font-size: 0.9rem; margin-bottom: 12px; color: var(--text-secondary); }
+.chart-container { position: relative; height: 220px; }
+
+/* Section */
+.section {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 16px;
+    margin-bottom: var(--gap);
+    overflow-x: auto;
+}
+.section h2 {
+    font-size: 1rem;
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text-primary);
+}
+.section-count {
+    background: var(--blue-bg);
+    color: var(--blue);
+    font-size: 0.7rem;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-weight: 600;
+}
+
+/* Tables */
+table { width: 100%; border-collapse: collapse; font-size: 0.78rem; }
+th {
+    text-align: left;
+    padding: 10px 8px;
+    border-bottom: 2px solid var(--border);
+    color: var(--text-muted);
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.68rem;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    white-space: nowrap;
+    user-select: none;
+}
+th:hover { color: var(--text-primary); }
+th .sort-arrow { font-size: 0.6rem; margin-left: 3px; opacity: 0.5; }
+th .sort-arrow.active { opacity: 1; color: var(--blue); }
+td { padding: 9px 8px; border-bottom: 1px solid rgba(30,41,59,0.6); white-space: nowrap; }
+tr:hover { background: rgba(255,255,255,0.02); }
+
+/* Signal type badges */
+.type-badge {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 0.68rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+.type-intraday { background: var(--blue-bg); color: var(--blue); }
+.type-swing { background: var(--purple-bg); color: var(--purple); }
+.type-positional { background: var(--green-bg); color: var(--green); }
+.type-momentum { background: var(--amber-bg); color: var(--amber); }
+.type-scalp { background: var(--red-bg); color: var(--red); }
+
+/* Confidence */
+.conf-high { color: var(--green); font-weight: 700; }
+.conf-med { color: var(--amber); font-weight: 600; }
+.conf-low { color: var(--red); }
+
+/* Status */
+.st-executed { color: var(--green); font-weight: 700; }
+.st-paper { color: var(--blue); font-weight: 600; }
+.st-rejected { color: var(--text-muted); }
+.st-failed { color: var(--red); font-weight: 600; }
+.st-review { color: var(--amber); }
+
+/* Action */
+.action-buy { color: var(--green); font-weight: 700; }
+.action-sell { color: var(--red); font-weight: 700; }
+
+/* Source badge */
+.src-telegram { color: #29b6f6; }
+.src-whatsapp { color: #66bb6a; }
+
+/* PnL */
+.pnl-pos { color: var(--green); font-weight: 700; }
+.pnl-neg { color: var(--red); font-weight: 700; }
+
+/* Empty state */
+.empty { text-align: center; color: var(--text-muted); padding: 30px; font-size: 0.85rem; }
+
+/* Footer */
+.footer {
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.7rem;
+    padding: 16px;
+    border-top: 1px solid var(--border);
+    margin-top: 10px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .kpi-row { grid-template-columns: repeat(2, 1fr); }
+    .chart-row { grid-template-columns: 1fr; }
+    .header { flex-direction: column; text-align: center; }
+}
+</style>
+</head>
+<body>
+<div class="dashboard">
+
+<!-- Header -->
+<div class="header">
+    <h1>
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2"><path d="M2 12h4l3-9 4 18 3-9h4"/><circle cx="21" cy="12" r="1.5" fill="#3b82f6"/></svg>
+        ArthBot Signal CopyTrade
+    </h1>
+    <div class="header-meta">
+        <span>Updated: 2026-04-16 15:27:38</span>
+        <span class="badge badge-paper">PAPER MODE</span>
+        <span>Auto-refresh: 60s</span>
+    </div>
+</div>
+
+<!-- KPI Cards -->
+<div class="kpi-row">
+    <div class="kpi blue">
+        <div class="kpi-value">21</div>
+        <div class="kpi-label">Signals Today</div>
+    </div>
+    <div class="kpi green">
+        <div class="kpi-value">17</div>
+        <div class="kpi-label">High Confidence</div>
+    </div>
+    <div class="kpi cyan">
+        <div class="kpi-value">16</div>
+        <div class="kpi-label">Executed</div>
+    </div>
+    <div class="kpi amber">
+        <div class="kpi-value">2</div>
+        <div class="kpi-label">Needs Review</div>
+    </div>
+    <div class="kpi red">
+        <div class="kpi-value">0</div>
+        <div class="kpi-label">Failed</div>
+    </div>
+    <div class="kpi red">
+        <div class="kpi-value">₹-300</div>
+        <div class="kpi-label">Today PnL</div>
+    </div>
+    <div class="kpi purple">
+        <div class="kpi-value">₹406,919</div>
+        <div class="kpi-label">Capital Deployed</div>
+    </div>
+    <div class="kpi green">
+        <div class="kpi-value">81%</div>
+        <div class="kpi-label">Win Rate</div>
+    </div>
+</div>
+
+<!-- Filter Bar -->
+<div class="filter-bar">
+    <div class="filter-group">
+        <label>Channel</label>
+        <select id="filter-channel" onchange="applyFilters()">
+            <option value="all">All Channels</option>
+        </select>
+    </div>
+    <div class="filter-group">
+        <label>Source</label>
+        <select id="filter-source" onchange="applyFilters()">
+            <option value="all">All Sources</option>
+            <option value="telegram">Telegram</option>
+            <option value="whatsapp">WhatsApp</option>
+        </select>
+    </div>
+    <div class="filter-group">
+        <label>Signal Type</label>
+        <select id="filter-type" onchange="applyFilters()">
+            <option value="all">All Types</option>
+            <option value="intraday">Intraday</option>
+            <option value="swing">Swing</option>
+            <option value="positional">Positional</option>
+            <option value="momentum">Momentum</option>
+            <option value="scalp">Scalp</option>
+        </select>
+    </div>
+    <div class="filter-group">
+        <label>Confidence</label>
+        <select id="filter-conf" onchange="applyFilters()">
+            <option value="all">All</option>
+            <option value="high">High (70+)</option>
+            <option value="med">Medium (50-69)</option>
+            <option value="low">Low (&lt;50)</option>
+        </select>
+    </div>
+    <div class="filter-group">
+        <label>Action</label>
+        <select id="filter-action" onchange="applyFilters()">
+            <option value="all">All</option>
+            <option value="BUY">BUY</option>
+            <option value="SELL">SELL</option>
+        </select>
+    </div>
+    <div class="filter-group">
+        <label>Date</label>
+        <input type="date" id="filter-date" value="2026-04-16" onchange="applyFilters()">
+    </div>
+</div>
+
+<!-- Charts Row -->
+<div class="chart-row">
+    <div class="chart-card">
+        <h3>Signals per Day (Last 7 Days)</h3>
+        <div class="chart-container"><canvas id="dailyChart"></canvas></div>
+    </div>
+    <div class="chart-card">
+        <h3>Signal Type Distribution</h3>
+        <div class="chart-container"><canvas id="typeChart"></canvas></div>
+    </div>
+    <div class="chart-card">
+        <h3>Confidence Distribution</h3>
+        <div class="chart-container"><canvas id="confChart"></canvas></div>
+    </div>
+</div>
+
+<!-- Signals Table -->
+<div class="section">
+    <h2>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+        Signal Tracker
+        <span class="section-count" id="signal-count">0</span>
+    </h2>
+    <table id="signals-table">
+        <thead>
+            <tr>
+                <th onclick="sortSignals('channel_name')">Channel <span class="sort-arrow" id="sort-channel_name"></span></th>
+                <th onclick="sortSignals('source')">Source <span class="sort-arrow" id="sort-source"></span></th>
+                <th onclick="sortSignals('timestamp')">Time <span class="sort-arrow" id="sort-timestamp">&#9660;</span></th>
+                <th onclick="sortSignals('action')">Action <span class="sort-arrow" id="sort-action"></span></th>
+                <th onclick="sortSignals('symbol')">Stock <span class="sort-arrow" id="sort-symbol"></span></th>
+                <th onclick="sortSignals('asset_type')">Asset <span class="sort-arrow" id="sort-asset_type"></span></th>
+                <th onclick="sortSignals('cmp')">CMP <span class="sort-arrow" id="sort-cmp"></span></th>
+                <th onclick="sortSignals('entry_price')">Entry <span class="sort-arrow" id="sort-entry_price"></span></th>
+                <th>Targets</th>
+                <th>Advised Exit</th>
+                <th>Adj Targets</th>
+                <th onclick="sortSignals('stop_loss')">SL <span class="sort-arrow" id="sort-stop_loss"></span></th>
+                <th onclick="sortSignals('signal_type')">Type <span class="sort-arrow" id="sort-signal_type"></span></th>
+                <th onclick="sortSignals('confidence')">Conf <span class="sort-arrow" id="sort-confidence"></span></th>
+            </tr>
+        </thead>
+        <tbody id="signals-body"></tbody>
+    </table>
+</div>
+
+<!-- Trades Table -->
+<div class="section">
+    <h2>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+        Trade Executions
+        <span class="section-count" id="trade-count">0</span>
+    </h2>
+    <table id="trades-table">
+        <thead>
+            <tr>
+                <th>Time</th>
+                <th>Status</th>
+                <th>Trade</th>
+                <th>Qty</th>
+                <th>Entry</th>
+                <th>LTP/Exit</th>
+                <th>Adj Targets</th>
+                <th>SL</th>
+                <th>Broker</th>
+                <th>Capital</th>
+                <th>Unrealized P&L</th>
+                <th>Realized P&L</th>
+                <th>Notes</th>
+            </tr>
+        </thead>
+        <tbody id="trades-body"></tbody>
+    </table>
+</div>
+
+<!-- Channel Performance -->
+<div class="section">
+    <h2>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M3 15h18M9 3v18M15 3v18"/></svg>
+        Channel Performance (7 Days)
+    </h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Channel</th>
+                <th>Source</th>
+                <th>Signals</th>
+                <th>High Conf</th>
+                <th>Executed</th>
+                <th>Hit Rate</th>
+                <th>Top Type</th>
+            </tr>
+        </thead>
+        <tbody id="channels-body"></tbody>
+    </table>
+</div>
+
+<!-- Footer -->
+<div class="footer">
+    ArthBot Signal CopyTrade v2.0 &nbsp;|&nbsp;
+    Target Reduction: 40% &nbsp;|&nbsp;
+    Max/Signal: ₹50,000 &nbsp;|&nbsp;
+    Max/Day: ₹2,000,000 &nbsp;|&nbsp;
+    Channels: 9 active
+</div>
+
+</div>
+
+<script>
+// ═══════════════════════════════════════════════════════════════════════════════
+// DATA (embedded from Python)
+// ═══════════════════════════════════════════════════════════════════════════════
+const ALL_SIGNALS = [{"raw_message": "1-2 Days Technical Call Target Achieved in CGPOWER at 750, BUY Call initiated at 724 (ANALYST YADNESH) Visit our website for disclosure (Nirmal Bang)", "source": "telegram", "channel_id": "-1001156121763", "channel_name": "Bulls Channel / Way2Laabh", "timestamp": "2026-04-16T09:16:44.274456", "action": "BUY", "symbol": "ACHIEVED", "exchange": "NSE", "asset_type": "equity", "strike": null, "option_type": "", "expiry": "", "entry_price": 750.0, "entry_range": null, "targets": [], "stop_loss": null, "signal_type": "swing", "cmp": null, "confidence": 60, "parse_notes": ["No valid targets found", "No stop loss found"], "lot_size": 0}, {"raw_message": "1-2 Days Technical Call Book Partial profits in ACE at 922-924 Target 940\u00a0 ,BUY Call initiated at 907.4(ANALYST VIKAS).\u00a0\u00a0Visit our website for disclosure. (Nirmal Bang).", "source": "telegram", "channel_id": "-1001156121763", "channel_name": "Bulls Channel / Way2Laabh", "timestamp": "2026-04-16T09:18:36.768270", "action": "BUY", "symbol": "ACE", "exchange": "NSE", "asset_type": "equity", "strike": null, "option_type": "", "expiry": "", "entry_price": 922.0, "entry_range": null, "targets": [940.0], "stop_loss": null, "signal_type": "swing", "cmp": 920.0, "confidence": 75, "parse_notes": ["No stop loss found"], "lot_size": 0}, {"raw_message": "1-2 Days Technical Call Book Partial profits in BSE at 3349.5-3352, Target 3514, BUY Call initiated at 3390\u00a0(ANALYST YADNESH).\u00a0Visit our website for disclosure. (Nirmal Bang).\u00a0", "source": "telegram", "channel_id": "-1001156121763", "channel_name": "Bulls Channel / Way2Laabh", "timestamp": "2026-04-16T09:20:08.768135", "action": "BUY", "symbol": "YADNESH", "exchange": "NSE", "asset_type": "equity", "strike": null, "option_type": "", "expiry": "", "entry_price": 3349.5, "entry_range": null, "targets": [3514.0], "stop_loss": null, "signal_type": "swing", "cmp": null, "confidence": 75, "parse_notes": ["No stop loss found"], "lot_size": 0}, {"raw_message": "BUY CRUDE OIL 8600 CE AT 92-88 SL BELOW 40 TARGET 150-180", "source": "telegram", "channel_id": "-1001156121763", "channel_name": "Bulls Channel / Way2Laabh", "timestamp": "2026-04-16T09:37:25.095108", "action": "BUY", "symbol": "CRUDE", "exchange": "NFO", "asset_type": "options", "strike": 8600.0, "option_type": "CE", "expiry": "", "entry_price": 90.0, "entry_range": [88.0, 92.0], "targets": [150.0], "stop_loss": 40.0, "signal_type": "momentum", "cmp": null, "confidence": 100, "parse_notes": [], "lot_size": 0}, {"raw_message": "Intraday Derivatives Call Buy SENSEX\u00a016APR\u00a078300 PE above 130 with SL 60 target 230 \u00a0(ANALYST NIRAV) Visit our website for disclosure (Nirmal Bang)\u00a0", "source": "telegram", "channel_id": "-1001156121763", "channel_name": "Bulls Channel / Way2Laabh", "timestamp": "2026-04-16T09:52:51.343248", "action": "BUY", "symbol": "SENSEX", "exchange": "NFO", "asset_type": "options", "strike": 78300.0, "option_type": "PE", "expiry": "16 APR", "entry_price": 130.0, "entry_range": null, "targets": [230.0], "stop_loss": 60.0, "signal_type": "intraday", "cmp": null, "confidence": 100, "parse_notes": [], "lot_size": 0}, {"raw_message": "Intraday Derivatives Call Buy SENSEX\u00a016APR\u00a078200 PE above 160 with SL 80 target 300\u00a0(ANALYST NIRAV) Visit our website for disclosure (Nirmal Bang)\u00a0", "source": "telegram", "channel_id": "-1001156121763", "channel_name": "Bulls Channel / Way2Laabh", "timestamp": "2026-04-16T10:02:01.516010", "action": "BUY", "symbol": "SENSEX", "exchange": "NFO", "asset_type": "options", "strike": 78200.0, "option_type": "PE", "expiry": "16 APR", "entry_price": 160.0, "entry_range": null, "targets": [300.0], "stop_loss": 80.0, "signal_type": "intraday", "cmp": null, "confidence": 100, "parse_notes": [], "lot_size": 0}, {"raw_message": "Intraday Derivatives Call Buy NIFTY\u00a021APR\u00a024200 PE at 168 with SL 145 Target 200(ANALYST AMIT).\u00a0Visit our website for disclosure. (Nirmal Bang).", "source": "telegram", "channel_id": "-1001156121763", "channel_name": "Bulls Channel / Way2Laabh", "timestamp": "2026-04-16T10:03:27.352153", "action": "BUY", "symbol": "NIFTY", "exchange": "NFO", "asset_type": "options", "strike": 24200.0, "option_type": "PE", "expiry": "21 APR", "entry_price": 168.0, "entry_range": null, "targets": [200.0], "stop_loss": 145.0, "signal_type": "intraday", "cmp": null, "confidence": 100, "parse_notes": [], "lot_size": 0}, {"raw_message": "Yes.i love............RECLTD- YES.. BIG POSITIVE NEWS IN POWER.........SECTOR AND FINANCE.\n\nBUY RECLTD-365CE @ 5.70_5.80\nTARGET- 11_15\nKEEP SL- 4", "source": "telegram", "channel_id": "-1001776878392", "channel_name": "Nirmal Bang Official", "timestamp": "2026-04-16T10:06:08.381220", "action": "BUY", "symbol": "YESI", "exchange": "NSE", "asset_type": "equity", "strike": null, "option_type": "", "expiry": "", "entry_price": 5.7, "entry_range": null, "targets": [11.0], "stop_loss": null, "signal_type": "momentum", "cmp": null, "confidence": 75, "parse_notes": ["No stop loss found"], "lot_size": 0}, {"raw_message": "1-2 DAYS Technical Call Buy PNBHOUSING above 889 with Stop Loss 872 Target 921\u00a0(ANALYST YADNESH).\u00a0Visit our website for disclosure. (Nirmal Bang).\u00a0", "source": "telegram", "channel_id": "-1001156121763", "channel_name": "Bulls Channel / Way2Laabh", "timestamp": "2026-04-16T10:08:24.863276", "action": "BUY", "symbol": "PNBHOUSING", "exchange": "NSE", "asset_type": "equity", "strike": null, "option_type": "", "expiry": "", "entry_price": 889.0, "entry_range": null, "targets": [921.0], "stop_loss": 872.0, "signal_type": "swing", "cmp": 890.9, "confidence": 90, "parse_notes": [], "lot_size": 0}, {"raw_message": "1-2 DAYS Technical call Buy BAJAJFINSV above 1847.40 with SL 1825 Target 1900\u00a0(ANALYST SWATI).\u00a0\u00a0 Visit our website for disclosure (Nirmal Bang).", "source": "telegram", "channel_id": "-1001156121763", "channel_name": "Bulls Channel / Way2Laabh", "timestamp": "2026-04-16T10:08:57.372904", "action": "BUY", "symbol": "BAJAJFINSV", "exchange": "NSE", "asset_type": "equity", "strike": null, "option_type": "", "expiry": "", "entry_price": 1847.4, "entry_range": null, "targets": [1900.0], "stop_loss": 1825.0, "signal_type": "swing", "cmp": 1849.4, "confidence": 90, "parse_notes": [], "lot_size": 0}, {"raw_message": "1-2 DAYS Technical call Buy ITC above 303.7 with SL 297 Target 320\u00a0\u00a0(ANALYST VIKAS).\u00a0\u00a0Visit our website for disclosure. (Nirmal Bang)", "source": "telegram", "channel_id": "-1001156121763", "channel_name": "Bulls Channel / Way2Laabh", "timestamp": "2026-04-16T11:18:08.776157", "action": "BUY", "symbol": "ITC", "exchange": "NSE", "asset_type": "equity", "strike": null, "option_type": "", "expiry": "", "entry_price": 303.7, "entry_range": null, "targets": [320.0], "stop_loss": 297.0, "signal_type": "swing", "cmp": 303.7, "confidence": 90, "parse_notes": [], "lot_size": 0}, {"raw_message": "Intraday Derivatives Call Buy SENSEX\u00a016APR\u00a078300 PE above 105 with SL 25 target 250\u00a0(ANALYST NIRAV) Visit our website for disclosure (Nirmal Bang)\u00a0", "source": "telegram", "channel_id": "-1001156121763", "channel_name": "Bulls Channel / Way2Laabh", "timestamp": "2026-04-16T11:26:35.599453", "action": "BUY", "symbol": "SENSEX", "exchange": "NFO", "asset_type": "options", "strike": 78300.0, "option_type": "PE", "expiry": "16 APR", "entry_price": 105.0, "entry_range": null, "targets": [250.0], "stop_loss": 25.0, "signal_type": "intraday", "cmp": null, "confidence": 100, "parse_notes": [], "lot_size": 0}, {"raw_message": "Intraday Derivatives Call Buy NIFTY\u00a021APR\u00a024050 PE at 156 with SL 128 Target 200(ANALYST AMIT).\u00a0Visit our website for disclosure. (Nirmal Bang).", "source": "telegram", "channel_id": "-1001156121763", "channel_name": "Bulls Channel / Way2Laabh", "timestamp": "2026-04-16T12:04:00.822788", "action": "BUY", "symbol": "NIFTY", "exchange": "NFO", "asset_type": "options", "strike": 24050.0, "option_type": "PE", "expiry": "21 APR", "entry_price": 156.0, "entry_range": null, "targets": [200.0], "stop_loss": 128.0, "signal_type": "intraday", "cmp": null, "confidence": 100, "parse_notes": [], "lot_size": 0}, {"raw_message": "#i love..my NATION- \n\nAND I LOVE.................N\n#BUY NATIONALUM- 460CE @ 5.40____5.50\nTARGET- 9_11\nKEEP SL- 3.50", "source": "telegram", "channel_id": "-1001776878392", "channel_name": "Nirmal Bang Official", "timestamp": "2026-04-16T12:43:36.338962", "action": "BUY", "symbol": "LOVEMY", "exchange": "NSE", "asset_type": "equity", "strike": null, "option_type": "", "expiry": "", "entry_price": 5.4, "entry_range": null, "targets": [9.0], "stop_loss": null, "signal_type": "momentum", "cmp": null, "confidence": 75, "parse_notes": ["No stop loss found"], "lot_size": 0}, {"raw_message": "BOOK PARTIAL PROFIT IN CRUDE OIL 8600 CE BUY CALL AT 140", "source": "telegram", "channel_id": "-1001156121763", "channel_name": "Bulls Channel / Way2Laabh", "timestamp": "2026-04-16T13:31:59.027394", "action": "BUY", "symbol": "CRUDE", "exchange": "NFO", "asset_type": "options", "strike": 8600.0, "option_type": "CE", "expiry": "", "entry_price": 140.0, "entry_range": null, "targets": [], "stop_loss": null, "signal_type": "intraday", "cmp": null, "confidence": 70, "parse_notes": ["No valid targets found", "No stop loss found"], "lot_size": 0}, {"raw_message": "1-2 Days BAJAJFINSV SL Triggered @ 1825\u00a0Visit our website for disclosure (Nirmal Bang).\u00a0", "source": "telegram", "channel_id": "-1001156121763", "channel_name": "Bulls Channel / Way2Laabh", "timestamp": "2026-04-16T13:55:31.107140", "action": "SL_HIT", "symbol": "BAJAJFINSV", "exchange": "NSE", "asset_type": "equity", "strike": null, "option_type": "", "expiry": "", "entry_price": null, "entry_range": null, "targets": [], "stop_loss": null, "signal_type": "", "cmp": null, "confidence": 10, "parse_notes": ["SL triggered notification \u2014 not a new signal"], "lot_size": 0}, {"raw_message": "145 TO 120\n\nSL HIT \u274c\n\n1625 LOSS \u274c", "source": "telegram", "channel_id": "-1001960295130", "channel_name": "Shree Tech Analysis", "timestamp": "2026-04-16T14:03:49.099064", "action": "SL_HIT", "symbol": "HIT", "exchange": "NSE", "asset_type": "equity", "strike": null, "option_type": "", "expiry": "", "entry_price": null, "entry_range": null, "targets": [], "stop_loss": null, "signal_type": "", "cmp": null, "confidence": 10, "parse_notes": ["SL triggered notification \u2014 not a new signal"], "lot_size": 0}, {"raw_message": "#BTST- SUPER LOOKING HOT......................\n\n#BUY HYUNDAI-  1900CE @39.50_40\nYES.................BUY BINDAS.........................", "source": "telegram", "channel_id": "-1001776878392", "channel_name": "Nirmal Bang Official", "timestamp": "2026-04-16T14:33:51.102531", "action": "BUY", "symbol": "BTST-", "exchange": "NFO", "asset_type": "options", "strike": 1900.0, "option_type": "CE", "expiry": "", "entry_price": 39.5, "entry_range": null, "targets": [], "stop_loss": null, "signal_type": "swing", "cmp": null, "confidence": 70, "parse_notes": ["No valid targets found", "No stop loss found"], "lot_size": 0}, {"raw_message": "Adaniensol\n\nAdaniensol 1200 ce 54-55\n\nsupport 44\n\nview 64\n\n\nDisclaimer :-\nAbove calls are Not Buy or Sell Levels,These opinions are for educational purposes only, based on research. Consult your financial advisor before investing.", "source": "telegram", "channel_id": "-1001191350817", "channel_name": "Stock Gainers", "timestamp": "2026-04-16T14:49:52.304936", "action": "BUY", "symbol": "ADANIENSOL", "exchange": "NFO", "asset_type": "options", "strike": 1200.0, "option_type": "CE", "expiry": "", "entry_price": 54.5, "entry_range": [54.0, 55.0], "targets": [], "stop_loss": null, "signal_type": "intraday", "cmp": 1217.5, "confidence": 70, "parse_notes": ["No valid targets found", "No stop loss found"], "lot_size": 0}, {"raw_message": "1-2 DAYS Technical call Buy DEVYANI above 108.6 with SL 104, Target 116(ANALYST AMIT).\u00a0Visit our website for disclosure. (Nirmal Bang).\u00a0", "source": "telegram", "channel_id": "-1001156121763", "channel_name": "Bulls Channel / Way2Laabh", "timestamp": "2026-04-16T14:52:08.766399", "action": "BUY", "symbol": "DEVYANI", "exchange": "NSE", "asset_type": "equity", "strike": null, "option_type": "", "expiry": "", "entry_price": 108.6, "entry_range": null, "targets": [116.0], "stop_loss": 104.0, "signal_type": "swing", "cmp": 109.22, "confidence": 90, "parse_notes": [], "lot_size": 0}, {"raw_message": "1-2 Days Technical Call Target Achieved in ETERNAL at 253, BUY Call initiated at 243.6 (ANALYST YADNESH) Visit our website for disclosure (Nirmal Bang)", "source": "telegram", "channel_id": "-1001156121763", "channel_name": "Bulls Channel / Way2Laabh", "timestamp": "2026-04-16T14:55:17.112437", "action": "BUY", "symbol": "ACHIEVED", "exchange": "NSE", "asset_type": "equity", "strike": null, "option_type": "", "expiry": "", "entry_price": 253.0, "entry_range": null, "targets": [], "stop_loss": null, "signal_type": "swing", "cmp": null, "confidence": 60, "parse_notes": ["No valid targets found", "No stop loss found"], "lot_size": 0}];
+const ALL_TRADES  = [{"timestamp": "2026-04-16T09:16:54.799134", "signal": {"raw_message": "1-2 Days Technical Call Target Achieved in CGPOWER at 750, BUY Call initiated at 724 (ANALYST YADNESH) Visit our website for disclosure (Nirmal Bang)", "source": "telegram", "channel_id": "-1001156121763", "channel_name": "Bulls Channel / Way2Laabh", "timestamp": "2026-04-16T09:16:44.274456", "action": "BUY", "symbol": "ACHIEVED", "exchange": "NSE", "asset_type": "equity", "strike": null, "option_type": "", "expiry": "", "entry_price": 750.0, "entry_range": null, "targets": [], "stop_loss": null, "signal_type": "swing", "cmp": null, "confidence": 60, "parse_notes": ["No valid targets found", "No stop loss found"], "lot_size": 0}, "status": "paper_executed", "order_id": "PAPER-1776311214", "broker": "PAPER", "message": "PAPER: BUY 33x ACHIEVED @ 750.0 | Adj Targets: [] | SL: None", "adjusted_targets": [], "quantity": 33, "capital": 24750.0}, {"timestamp": "2026-04-16T09:18:38.517278", "signal": {"raw_message": "1-2 Days Technical Call Book Partial profits in ACE at 922-924 Target 940\u00a0 ,BUY Call initiated at 907.4(ANALYST VIKAS).\u00a0\u00a0Visit our website for disclosure. (Nirmal Bang).", "source": "telegram", "channel_id": "-1001156121763", "channel_name": "Bulls Channel / Way2Laabh", "timestamp": "2026-04-16T09:18:36.768270", "action": "BUY", "symbol": "ACE", "exchange": "NSE", "asset_type": "equity", "strike": null, "option_type": "", "expiry": "", "entry_price": 922.0, "entry_range": null, "targets": [940.0], "stop_loss": null, "signal_type": "swing", "cmp": 920.0, "confidence": 75, "parse_notes": ["No stop loss found"], "lot_size": 0}, "status": "paper_executed", "order_id": "PAPER-1776311318", "broker": "PAPER", "message": "PAPER: BUY 27x ACE @ 922.0 | Adj Targets: [932.8] | SL: None", "adjusted_targets": [932.8], "quantity": 27, "capital": 24894.0}, {"timestamp": "2026-04-16T09:20:14.018247", "signal": {"raw_message": "1-2 Days Technical Call Book Partial profits in BSE at 3349.5-3352, Target 3514, BUY Call initiated at 3390\u00a0(ANALYST YADNESH).\u00a0Visit our website for disclosure. (Nirmal Bang).\u00a0", "source": "telegram", "channel_id": "-1001156121763", "channel_name": "Bulls Channel / Way2Laabh", "timestamp": "2026-04-16T09:20:08.768135", "action": "BUY", "symbol": "YADNESH", "exchange": "NSE", "asset_type": "equity", "strike": null, "option_type": "", "expiry": "", "entry_price": 3349.5, "entry_range": null, "targets": [3514.0], "stop_loss": null, "signal_type": "swing", "cmp": null, "confidence": 75, "parse_notes": ["No stop loss found"], "lot_size": 0}, "status": "paper_executed", "order_id": "PAPER-1776311414", "broker": "PAPER", "message": "PAPER: BUY 7x YADNESH @ 3349.5 | Adj Targets: [3448.2] | SL: None", "adjusted_targets": [3448.2], "quantity": 7, "capital": 23446.5}, {"timestamp": "2026-04-16T09:37:30.316595", "signal": {"raw_message": "BUY CRUDE OIL 8600 CE AT 92-88 SL BELOW 40 TARGET 150-180", "source": "telegram", "channel_id": "-1001156121763", "channel_name": "Bulls Channel / Way2Laabh", "timestamp": "2026-04-16T09:37:25.095108", "action": "BUY", "symbol": "CRUDE", "exchange": "NFO", "asset_type": "options", "strike": 8600.0, "option_type": "CE", "expiry": "", "entry_price": 90.0, "entry_range": [88.0, 92.0], "targets": [150.0], "stop_loss": 40.0, "signal_type": "momentum", "cmp": null, "confidence": 100, "parse_notes": [], "lot_size": 0}, "status": "paper_executed", "order_id": "PAPER-1776312450", "broker": "PAPER", "message": "PAPER: BUY 500x CRUDE @ 90.0 | Adj Targets: [126.0] | SL: 40.0", "adjusted_targets": [126.0], "quantity": 500, "capital": 45000.0}, {"timestamp": "2026-04-16T09:52:56.021473", "signal": {"raw_message": "Intraday Derivatives Call Buy SENSEX\u00a016APR\u00a078300 PE above 130 with SL 60 target 230 \u00a0(ANALYST NIRAV) Visit our website for disclosure (Nirmal Bang)\u00a0", "source": "telegram", "channel_id": "-1001156121763", "channel_name": "Bulls Channel / Way2Laabh", "timestamp": "2026-04-16T09:52:51.343248", "action": "BUY", "symbol": "SENSEX", "exchange": "NFO", "asset_type": "options", "strike": 78300.0, "option_type": "PE", "expiry": "16 APR", "entry_price": 130.0, "entry_range": null, "targets": [230.0], "stop_loss": 60.0, "signal_type": "intraday", "cmp": null, "confidence": 100, "parse_notes": [], "lot_size": 0}, "status": "paper_executed", "order_id": "PAPER-1776313376", "broker": "PAPER", "message": "PAPER: BUY 190x SENSEX @ 130.0 | Adj Targets: [190.0] | SL: 60.0", "adjusted_targets": [190.0], "quantity": 190, "capital": 24700.0}, {"timestamp": "2026-04-16T10:03:29.020592", "signal": {"raw_message": "Intraday Derivatives Call Buy NIFTY\u00a021APR\u00a024200 PE at 168 with SL 145 Target 200(ANALYST AMIT).\u00a0Visit our website for disclosure. (Nirmal Bang).", "source": "telegram", "channel_id": "-1001156121763", "channel_name": "Bulls Channel / Way2Laabh", "timestamp": "2026-04-16T10:03:27.352153", "action": "BUY", "symbol": "NIFTY", "exchange": "NFO", "asset_type": "options", "strike": 24200.0, "option_type": "PE", "expiry": "21 APR", "entry_price": 168.0, "entry_range": null, "targets": [200.0], "stop_loss": 145.0, "signal_type": "intraday", "cmp": null, "confidence": 100, "parse_notes": [], "lot_size": 0}, "status": "paper_executed", "order_id": "PAPER-1776314009", "broker": "PAPER", "message": "PAPER: BUY 125x NIFTY @ 168.0 | Adj Targets: [187.2] | SL: 145.0", "adjusted_targets": [187.2], "quantity": 125, "capital": 21000.0}, {"timestamp": "2026-04-16T10:06:13.531391", "signal": {"raw_message": "Yes.i love............RECLTD- YES.. BIG POSITIVE NEWS IN POWER.........SECTOR AND FINANCE.\n\nBUY RECLTD-365CE @ 5.70_5.80\nTARGET- 11_15\nKEEP SL- 4", "source": "telegram", "channel_id": "-1001776878392", "channel_name": "Nirmal Bang Official", "timestamp": "2026-04-16T10:06:08.381220", "action": "BUY", "symbol": "YESI", "exchange": "NSE", "asset_type": "equity", "strike": null, "option_type": "", "expiry": "", "entry_price": 5.7, "entry_range": null, "targets": [11.0], "stop_loss": null, "signal_type": "momentum", "cmp": null, "confidence": 75, "parse_notes": ["No stop loss found"], "lot_size": 0}, "status": "paper_executed", "order_id": "PAPER-1776314173", "broker": "PAPER", "message": "PAPER: BUY 4385x YESI @ 5.7 | Adj Targets: [8.88] | SL: None", "adjusted_targets": [8.88], "quantity": 4385, "capital": 24994.5}, {"timestamp": "2026-04-16T10:08:27.578629", "signal": {"raw_message": "1-2 DAYS Technical Call Buy PNBHOUSING above 889 with Stop Loss 872 Target 921\u00a0(ANALYST YADNESH).\u00a0Visit our website for disclosure. (Nirmal Bang).\u00a0", "source": "telegram", "channel_id": "-1001156121763", "channel_name": "Bulls Channel / Way2Laabh", "timestamp": "2026-04-16T10:08:24.863276", "action": "BUY", "symbol": "PNBHOUSING", "exchange": "NSE", "asset_type": "equity", "strike": null, "option_type": "", "expiry": "", "entry_price": 889.0, "entry_range": null, "targets": [921.0], "stop_loss": 872.0, "signal_type": "swing", "cmp": 890.9, "confidence": 90, "parse_notes": [], "lot_size": 0}, "status": "paper_executed", "order_id": "PAPER-1776314307", "broker": "PAPER", "message": "PAPER: BUY 28x PNBHOUSING @ 889.0 | Adj Targets: [908.2] | SL: 872.0", "adjusted_targets": [908.2], "quantity": 28, "capital": 24892.0, "unrealized_pnl": 128.8, "last_ltp": 893.6}, {"timestamp": "2026-04-16T10:08:59.555185", "signal": {"raw_message": "1-2 DAYS Technical call Buy BAJAJFINSV above 1847.40 with SL 1825 Target 1900\u00a0(ANALYST SWATI).\u00a0\u00a0 Visit our website for disclosure (Nirmal Bang).", "source": "telegram", "channel_id": "-1001156121763", "channel_name": "Bulls Channel / Way2Laabh", "timestamp": "2026-04-16T10:08:57.372904", "action": "BUY", "symbol": "BAJAJFINSV", "exchange": "NSE", "asset_type": "equity", "strike": null, "option_type": "", "expiry": "", "entry_price": 1847.4, "entry_range": null, "targets": [1900.0], "stop_loss": 1825.0, "signal_type": "swing", "cmp": 1849.4, "confidence": 90, "parse_notes": [], "lot_size": 0}, "status": "paper_executed", "order_id": "PAPER-1776314339", "broker": "PAPER", "message": "PAPER: BUY 13x BAJAJFINSV @ 1847.4 | Adj Targets: [1878.96] | SL: 1825.0", "adjusted_targets": [1878.96], "quantity": 13, "capital": 24016.2, "unrealized_pnl": -300.3, "last_ltp": 1824.3, "closed": true, "exit_price": 1824.3, "exit_reason": "STOP_LOSS", "pnl": -300.3}, {"timestamp": "2026-04-16T11:18:12.030290", "signal": {"raw_message": "1-2 DAYS Technical call Buy ITC above 303.7 with SL 297 Target 320\u00a0\u00a0(ANALYST VIKAS).\u00a0\u00a0Visit our website for disclosure. (Nirmal Bang)", "source": "telegram", "channel_id": "-1001156121763", "channel_name": "Bulls Channel / Way2Laabh", "timestamp": "2026-04-16T11:18:08.776157", "action": "BUY", "symbol": "ITC", "exchange": "NSE", "asset_type": "equity", "strike": null, "option_type": "", "expiry": "", "entry_price": 303.7, "entry_range": null, "targets": [320.0], "stop_loss": 297.0, "signal_type": "swing", "cmp": 303.7, "confidence": 90, "parse_notes": [], "lot_size": 0}, "status": "paper_executed", "order_id": "PAPER-1776318492", "broker": "PAPER", "message": "PAPER: BUY 82x ITC @ 303.7 | Adj Targets: [313.48] | SL: 297.0", "adjusted_targets": [313.48], "quantity": 82, "capital": 24903.4, "unrealized_pnl": -20.5, "last_ltp": 303.45}, {"timestamp": "2026-04-16T11:26:37.538128", "signal": {"raw_message": "Intraday Derivatives Call Buy SENSEX\u00a016APR\u00a078300 PE above 105 with SL 25 target 250\u00a0(ANALYST NIRAV) Visit our website for disclosure (Nirmal Bang)\u00a0", "source": "telegram", "channel_id": "-1001156121763", "channel_name": "Bulls Channel / Way2Laabh", "timestamp": "2026-04-16T11:26:35.599453", "action": "BUY", "symbol": "SENSEX", "exchange": "NFO", "asset_type": "options", "strike": 78300.0, "option_type": "PE", "expiry": "16 APR", "entry_price": 105.0, "entry_range": null, "targets": [250.0], "stop_loss": 25.0, "signal_type": "intraday", "cmp": null, "confidence": 100, "parse_notes": [], "lot_size": 0}, "status": "paper_executed", "order_id": "PAPER-1776318997", "broker": "PAPER", "message": "PAPER: BUY 230x SENSEX @ 105.0 | Adj Targets: [192.0] | SL: 25.0", "adjusted_targets": [192.0], "quantity": 230, "capital": 24150.0}, {"timestamp": "2026-04-16T12:04:02.791763", "signal": {"raw_message": "Intraday Derivatives Call Buy NIFTY\u00a021APR\u00a024050 PE at 156 with SL 128 Target 200(ANALYST AMIT).\u00a0Visit our website for disclosure. (Nirmal Bang).", "source": "telegram", "channel_id": "-1001156121763", "channel_name": "Bulls Channel / Way2Laabh", "timestamp": "2026-04-16T12:04:00.822788", "action": "BUY", "symbol": "NIFTY", "exchange": "NFO", "asset_type": "options", "strike": 24050.0, "option_type": "PE", "expiry": "21 APR", "entry_price": 156.0, "entry_range": null, "targets": [200.0], "stop_loss": 128.0, "signal_type": "intraday", "cmp": null, "confidence": 100, "parse_notes": [], "lot_size": 0}, "status": "paper_executed", "order_id": "PAPER-1776321242", "broker": "PAPER", "message": "PAPER: BUY 150x NIFTY @ 156.0 | Adj Targets: [182.4] | SL: 128.0", "adjusted_targets": [182.4], "quantity": 150, "capital": 23400.0}, {"timestamp": "2026-04-16T14:33:55.768999", "signal": {"raw_message": "#BTST- SUPER LOOKING HOT......................\n\n#BUY HYUNDAI-  1900CE @39.50_40\nYES.................BUY BINDAS.........................", "source": "telegram", "channel_id": "-1001776878392", "channel_name": "Nirmal Bang Official", "timestamp": "2026-04-16T14:33:51.102531", "action": "BUY", "symbol": "BTST-", "exchange": "NFO", "asset_type": "options", "strike": 1900.0, "option_type": "CE", "expiry": "", "entry_price": 39.5, "entry_range": null, "targets": [], "stop_loss": null, "signal_type": "swing", "cmp": null, "confidence": 70, "parse_notes": ["No valid targets found", "No stop loss found"], "lot_size": 0}, "status": "paper_executed", "order_id": "PAPER-1776330235", "broker": "PAPER", "message": "PAPER: BUY 500x BTST- @ 39.5 | Adj Targets: [] | SL: None", "adjusted_targets": [], "quantity": 500, "capital": 19750.0}, {"timestamp": "2026-04-16T14:49:54.023798", "signal": {"raw_message": "Adaniensol\n\nAdaniensol 1200 ce 54-55\n\nsupport 44\n\nview 64\n\n\nDisclaimer :-\nAbove calls are Not Buy or Sell Levels,These opinions are for educational purposes only, based on research. Consult your financial advisor before investing.", "source": "telegram", "channel_id": "-1001191350817", "channel_name": "Stock Gainers", "timestamp": "2026-04-16T14:49:52.304936", "action": "BUY", "symbol": "ADANIENSOL", "exchange": "NFO", "asset_type": "options", "strike": 1200.0, "option_type": "CE", "expiry": "", "entry_price": 54.5, "entry_range": [54.0, 55.0], "targets": [], "stop_loss": null, "signal_type": "intraday", "cmp": 1217.5, "confidence": 70, "parse_notes": ["No valid targets found", "No stop loss found"], "lot_size": 0}, "status": "paper_executed", "order_id": "PAPER-1776331194", "broker": "PAPER", "message": "PAPER: BUY 500x ADANIENSOL @ 54.5 | Adj Targets: [] | SL: None", "adjusted_targets": [], "quantity": 500, "capital": 27250.0}, {"timestamp": "2026-04-16T14:52:11.019222", "signal": {"raw_message": "1-2 DAYS Technical call Buy DEVYANI above 108.6 with SL 104, Target 116(ANALYST AMIT).\u00a0Visit our website for disclosure. (Nirmal Bang).\u00a0", "source": "telegram", "channel_id": "-1001156121763", "channel_name": "Bulls Channel / Way2Laabh", "timestamp": "2026-04-16T14:52:08.766399", "action": "BUY", "symbol": "DEVYANI", "exchange": "NSE", "asset_type": "equity", "strike": null, "option_type": "", "expiry": "", "entry_price": 108.6, "entry_range": null, "targets": [116.0], "stop_loss": 104.0, "signal_type": "swing", "cmp": 109.22, "confidence": 90, "parse_notes": [], "lot_size": 0}, "status": "paper_executed", "order_id": "PAPER-1776331331", "broker": "PAPER", "message": "PAPER: BUY 230x DEVYANI @ 108.6 | Adj Targets: [113.04] | SL: 104.0", "adjusted_targets": [113.04], "quantity": 230, "capital": 24978.0, "unrealized_pnl": 4.6, "last_ltp": 108.62}, {"timestamp": "2026-04-16T14:55:21.767092", "signal": {"raw_message": "1-2 Days Technical Call Target Achieved in ETERNAL at 253, BUY Call initiated at 243.6 (ANALYST YADNESH) Visit our website for disclosure (Nirmal Bang)", "source": "telegram", "channel_id": "-1001156121763", "channel_name": "Bulls Channel / Way2Laabh", "timestamp": "2026-04-16T14:55:17.112437", "action": "BUY", "symbol": "ACHIEVED", "exchange": "NSE", "asset_type": "equity", "strike": null, "option_type": "", "expiry": "", "entry_price": 253.0, "entry_range": null, "targets": [], "stop_loss": null, "signal_type": "swing", "cmp": null, "confidence": 60, "parse_notes": ["No valid targets found", "No stop loss found"], "lot_size": 0}, "status": "paper_executed", "order_id": "PAPER-1776331521", "broker": "PAPER", "message": "PAPER: BUY 98x ACHIEVED @ 253.0 | Adj Targets: [] | SL: None", "adjusted_targets": [], "quantity": 98, "capital": 24794.0}];
+const CH_STATS    = {"Bulls Channel / Way2Laabh": {"signals": 16, "high_conf": 13, "source": "telegram", "types": {"swing": 8, "momentum": 1, "intraday": 6, "": 1}, "executed": 13}, "Nirmal Bang Official": {"signals": 3, "high_conf": 3, "source": "telegram", "types": {"momentum": 2, "swing": 1}, "executed": 2}, "Shree Tech Analysis": {"signals": 1, "high_conf": 0, "source": "telegram", "types": {"": 1}, "executed": 0}, "Stock Gainers": {"signals": 1, "high_conf": 1, "source": "telegram", "types": {"intraday": 1}, "executed": 1}};
+
+// Chart data
+const DAILY_LABELS = ["2026-04-16"];
+const DAILY_VALUES = [21];
+const TYPE_LABELS  = ["swing", "momentum", "intraday", ""];
+const TYPE_VALUES  = [9, 3, 7, 2];
+const CONF_LABELS  = ["90-100", "70-89", "50-69", "30-49", "0-29"];
+const CONF_VALUES  = [10, 7, 2, 0, 2];
+
+const TARGET_REDUCTION = 0.4;
+
+// ═══════════════════════════════════════════════════════════════════════════════
+// STATE
+// ═══════════════════════════════════════════════════════════════════════════════
+let filteredSignals = [...ALL_SIGNALS];
+let sortCol = 'timestamp';
+let sortDir = 'desc';
+
+// ═══════════════════════════════════════════════════════════════════════════════
+// HELPERS
+// ═══════════════════════════════════════════════════════════════════════════════
+function fmt(v) { return v != null && v !== '' && v !== 0 ? Number(v).toLocaleString('en-IN') : '-'; }
+function fmtR(v) { return v != null ? '₹' + Number(v).toLocaleString('en-IN') : '-'; }
+
+function computeAdjTargets(entry, targets, action) {
+    if (!entry || !targets || !targets.length) return [];
+    return targets.map(t => {
+        const move = Math.abs(t - entry);
+        const reduced = move * (1 - TARGET_REDUCTION);
+        return action === 'BUY' ? Math.round(entry + reduced) : Math.round(entry - reduced);
+    });
+}
+
+function typeClass(t) {
+    return 'type-' + (t || 'intraday').toLowerCase().replace(/[^a-z]/g, '');
+}
+
+function confClass(c) {
+    if (c >= 70) return 'conf-high';
+    if (c >= 50) return 'conf-med';
+    return 'conf-low';
+}
+
+function statusClass(s) {
+    const map = { executed: 'st-executed', paper_executed: 'st-paper', rejected: 'st-rejected',
+                   failed: 'st-failed', error: 'st-failed', duplicate: 'st-rejected' };
+    return map[s] || '';
+}
+
+// ═══════════════════════════════════════════════════════════════════════════════
+// FILTERS
+// ═══════════════════════════════════════════════════════════════════════════════
+function populateChannelFilter() {
+    const sel = document.getElementById('filter-channel');
+    const channels = [...new Set(ALL_SIGNALS.map(s => s.channel_name))].sort();
+    channels.forEach(ch => {
+        const opt = document.createElement('option');
+        opt.value = ch;
+        opt.textContent = ch;
+        sel.appendChild(opt);
+    });
+}
+
+function applyFilters() {
+    const ch = document.getElementById('filter-channel').value;
+    const src = document.getElementById('filter-source').value;
+    const typ = document.getElementById('filter-type').value;
+    const conf = document.getElementById('filter-conf').value;
+    const act = document.getElementById('filter-action').value;
+    const dt = document.getElementById('filter-date').value;
+
+    filteredSignals = ALL_SIGNALS.filter(s => {
+        if (ch !== 'all' && s.channel_name !== ch) return false;
+        if (src !== 'all' && s.source !== src) return false;
+        if (typ !== 'all' && (s.signal_type || 'intraday') !== typ) return false;
+        if (act !== 'all' && s.action !== act) return false;
+        if (dt && !s.timestamp.startsWith(dt)) return false;
+        if (conf !== 'all') {
+            const c = s.confidence || 0;
+            if (conf === 'high' && c < 70) return false;
+            if (conf === 'med' && (c < 50 || c > 69)) return false;
+            if (conf === 'low' && c >= 50) return false;
+        }
+        return true;
+    });
+
+    renderSignals();
+    renderTrades();
+    document.getElementById('signal-count').textContent = filteredSignals.length;
+}
+
+// ═══════════════════════════════════════════════════════════════════════════════
+// SORTING
+// ═══════════════════════════════════════════════════════════════════════════════
+function sortSignals(col) {
+    if (sortCol === col) {
+        sortDir = sortDir === 'asc' ? 'desc' : 'asc';
+    } else {
+        sortCol = col;
+        sortDir = 'desc';
+    }
+    // Update arrows
+    document.querySelectorAll('.sort-arrow').forEach(el => { el.className = 'sort-arrow'; el.innerHTML = ''; });
+    const arrow = document.getElementById('sort-' + col);
+    if (arrow) {
+        arrow.className = 'sort-arrow active';
+        arrow.innerHTML = sortDir === 'asc' ? '&#9650;' : '&#9660;';
+    }
+    renderSignals();
+}
+
+// ═══════════════════════════════════════════════════════════════════════════════
+// RENDER SIGNALS TABLE
+// ═══════════════════════════════════════════════════════════════════════════════
+function renderSignals() {
+    const sorted = [...filteredSignals].sort((a, b) => {
+        let va = a[sortCol], vb = b[sortCol];
+        if (va == null) va = '';
+        if (vb == null) vb = '';
+        if (typeof va === 'number' && typeof vb === 'number') {
+            return sortDir === 'asc' ? va - vb : vb - va;
+        }
+        va = String(va); vb = String(vb);
+        return sortDir === 'asc' ? va.localeCompare(vb) : vb.localeCompare(va);
+    });
+
+    const body = document.getElementById('signals-body');
+    if (!sorted.length) {
+        body.innerHTML = '<tr><td colspan="13" class="empty">No signals match the current filters</td></tr>';
+        return;
+    }
+
+    body.innerHTML = sorted.map(s => {
+        const targets = s.targets || [];
+        const adjTgts = computeAdjTargets(s.entry_price, targets, s.action);
+        const sType = s.signal_type || 'intraday';
+        const srcIcon = s.source === 'telegram' ? '✈' : '📱';
+        const optInfo = s.asset_type === 'options' && s.strike ? ' ' + s.strike + ' ' + (s.option_type || '') : '';
+
+        return '<tr>' +
+            '<td title="' + (s.channel_name || '') + '">' + (s.channel_name || '-').substring(0, 22) + '</td>' +
+            '<td class="src-' + s.source + '">' + srcIcon + ' ' + (s.source || '') + '</td>' +
+            '<td>' + (s.timestamp || '').substring(0, 19) + '</td>' +
+            '<td class="action-' + (s.action || '').toLowerCase() + '">' + (s.action || '-') + '</td>' +
+            '<td><b>' + (s.symbol || '-') + '</b>' + optInfo + '</td>' +
+            '<td>' + (s.asset_type || '') + '</td>' +
+            '<td>' + (s.cmp ? fmtR(s.cmp) : (s.entry_price ? fmtR(s.entry_price) : '-')) + '</td>' +
+            '<td>' + (s.entry_price ? fmt(s.entry_price) : '-') + '</td>' +
+            '<td>' + (targets.length ? targets.map(t => fmt(t)).join(', ') : '-') + '</td>' +
+            '<td style="color:var(--cyan)">' + (adjTgts.length ? adjTgts.map(t => fmt(t)).join(', ') : '-') + '</td>' +
+            '<td>' + (s.stop_loss ? fmt(s.stop_loss) : '-') + '</td>' +
+            '<td><span class="type-badge ' + typeClass(sType) + '">' + sType + '</span></td>' +
+            '<td class="' + confClass(s.confidence || 0) + '">' + (s.confidence || 0) + '%</td>' +
+        '</tr>';
+    }).join('');
+}
+
+// ═══════════════════════════════════════════════════════════════════════════════
+// RENDER TRADES TABLE
+// ═══════════════════════════════════════════════════════════════════════════════
+function renderTrades() {
+    const dt = document.getElementById('filter-date').value;
+    const filtered = dt ? ALL_TRADES.filter(t => t.timestamp && t.timestamp.startsWith(dt)) : ALL_TRADES;
+
+    document.getElementById('trade-count').textContent = filtered.length;
+    const body = document.getElementById('trades-body');
+
+    if (!filtered.length) {
+        body.innerHTML = '<tr><td colspan="13" class="empty">No trades for the selected date</td></tr>';
+        return;
+    }
+
+    body.innerHTML = [...filtered].reverse().map(t => {
+        const sig = t.signal || {};
+        const st = t.status || '';
+        const adj = t.adjusted_targets || [];
+        const pnl = t.pnl;
+        const pnlStr = typeof pnl === 'number' && pnl !== 0 ? fmtR(pnl) : '-';
+        const pnlCls = typeof pnl === 'number' ? (pnl > 0 ? 'pnl-pos' : pnl < 0 ? 'pnl-neg' : '') : '';
+
+        return '<tr>' +
+            '<td>' + (t.timestamp || '').substring(0, 19) + '</td>' +
+            '<td class="' + statusClass(st) + '">' + st.toUpperCase() + '</td>' +
+            '<td><span class="action-' + (sig.action || '').toLowerCase() + '">' + (sig.action || '') + '</span> <b>' + (sig.symbol || '') + '</b></td>' +
+            '<td>' + (t.quantity || 0) + '</td>' +
+            '<td>' + (sig.entry_price ? fmt(sig.entry_price) : '-') + '</td>' +
+            '<td style="color:var(--yellow)">' + (t.exit_price ? fmt(t.exit_price) + ' (' + (t.exit_reason||'') + ')' : (t.last_ltp ? fmt(t.last_ltp) : '-')) + '</td>' +
+            '<td style="color:var(--cyan)">' + (adj.length ? adj.map(a => fmt(a)).join(', ') : '-') + '</td>' +
+            '<td>' + (sig.stop_loss ? fmt(sig.stop_loss) : '-') + '</td>' +
+            '<td>' + (t.broker || '-') + '</td>' +
+            '<td>' + (t.capital ? fmtR(t.capital) : '-') + '</td>' +
+            '<td class="' + (typeof t.unrealized_pnl==="number" ? (t.unrealized_pnl>0?"pnl-pos":"pnl-neg") : "") + '">' + (typeof t.unrealized_pnl==="number" && t.unrealized_pnl!==0 ? fmtR(t.unrealized_pnl) : '-') + '</td>' +
+            '<td class="' + pnlCls + '">' + pnlStr + '</td>' +
+            '<td title="' + (t.message || '') + '">' + (t.message || '').substring(0, 25) + '</td>' +
+        '</tr>';
+    }).join('');
+}
+
+// ═══════════════════════════════════════════════════════════════════════════════
+// RENDER CHANNEL TABLE
+// ═══════════════════════════════════════════════════════════════════════════════
+function renderChannels() {
+    const body = document.getElementById('channels-body');
+    const entries = Object.entries(CH_STATS).sort((a, b) => b[1].signals - a[1].signals);
+
+    if (!entries.length) {
+        body.innerHTML = '<tr><td colspan="7" class="empty">No channel data yet</td></tr>';
+        return;
+    }
+
+    body.innerHTML = entries.map(([ch, st]) => {
+        const hitRate = Math.round(st.high_conf / Math.max(st.signals, 1) * 100);
+        const topType = Object.entries(st.types || {}).sort((a, b) => b[1] - a[1])[0];
+        const srcIcon = st.source === 'telegram' ? '✈' : '📱';
+        return '<tr>' +
+            '<td><b>' + ch + '</b></td>' +
+            '<td class="src-' + st.source + '">' + srcIcon + ' ' + st.source + '</td>' +
+            '<td>' + st.signals + '</td>' +
+            '<td class="conf-high">' + st.high_conf + '</td>' +
+            '<td class="st-executed">' + (st.executed || 0) + '</td>' +
+            '<td>' + hitRate + '%</td>' +
+            '<td>' + (topType ? '<span class="type-badge ' + typeClass(topType[0]) + '">' + topType[0] + '</span>' : '-') + '</td>' +
+        '</tr>';
+    }).join('');
+}
+
+// ═══════════════════════════════════════════════════════════════════════════════
+// CHARTS
+// ═══════════════════════════════════════════════════════════════════════════════
+const CHART_COLORS = ['#3b82f6', '#f59e0b', '#10b981', '#ef4444', '#8b5cf6', '#06b6d4', '#ec4899'];
+
+function initCharts() {
+    // Daily signals chart
+    new Chart(document.getElementById('dailyChart'), {
+        type: 'bar',
+        data: {
+            labels: DAILY_LABELS.map(d => d.substring(5)),
+            datasets: [{
+                label: 'Signals',
+                data: DAILY_VALUES,
+                backgroundColor: '#3b82f6cc',
+                borderColor: '#3b82f6',
+                borderWidth: 1,
+                borderRadius: 4,
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: { legend: { display: false } },
+            scales: {
+                x: { grid: { display: false }, ticks: { color: '#94a3b8' } },
+                y: { beginAtZero: true, grid: { color: '#1e293b' }, ticks: { color: '#94a3b8', stepSize: 1 } }
+            }
+        }
+    });
+
+    // Signal type doughnut
+    new Chart(document.getElementById('typeChart'), {
+        type: 'doughnut',
+        data: {
+            labels: TYPE_LABELS.map(l => l.charAt(0).toUpperCase() + l.slice(1)),
+            datasets: [{
+                data: TYPE_VALUES,
+                backgroundColor: CHART_COLORS.map(c => c + 'cc'),
+                borderColor: '#111827',
+                borderWidth: 2,
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            cutout: '55%',
+            plugins: {
+                legend: { position: 'right', labels: { color: '#94a3b8', usePointStyle: true, padding: 12, font: { size: 11 } } }
+            }
+        }
+    });
+
+    // Confidence distribution
+    new Chart(document.getElementById('confChart'), {
+        type: 'bar',
+        data: {
+            labels: CONF_LABELS,
+            datasets: [{
+                label: 'Signals',
+                data: CONF_VALUES,
+                backgroundColor: ['#10b981cc', '#22c55ecc', '#f59e0bcc', '#f97316cc', '#ef4444cc'],
+                borderRadius: 4,
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: { legend: { display: false } },
+            scales: {
+                x: { grid: { display: false }, ticks: { color: '#94a3b8', font: { size: 10 } } },
+                y: { beginAtZero: true, grid: { color: '#1e293b' }, ticks: { color: '#94a3b8', stepSize: 1 } }
+            }
+        }
+    });
+}
+
+// ═══════════════════════════════════════════════════════════════════════════════
+// INIT
+// ═══════════════════════════════════════════════════════════════════════════════
+document.addEventListener('DOMContentLoaded', () => {
+    populateChannelFilter();
+    applyFilters();
+    renderChannels();
+    initCharts();
+});
+</script>
+</body>
+</html>
