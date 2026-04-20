@@ -1346,7 +1346,12 @@
       14.8
     ],
     "quantity": 1923,
-    "capital": 24999.0
+    "capital": 24999.0,
+    "closed": true,
+    "exit_price": 0,
+    "exit_reason": "EXPIRED",
+    "pnl": -24999.0,
+    "exit_time": "2026-03-26T15:30:00"
   },
   {
     "timestamp": "2026-04-10T08:55:40.506166",
@@ -2020,7 +2025,9 @@
     "message": "PAPER: BUY 500x PIIND @ 105.0 | Adj Targets: [] | SL: None",
     "adjusted_targets": [],
     "quantity": 500,
-    "capital": 52500.0
+    "capital": 52500.0,
+    "unrealized_pnl": 48650.0,
+    "last_ltp": 202.3
   },
   {
     "timestamp": "2026-04-10T12:44:24.943630",
@@ -2546,7 +2553,12 @@
       133.0
     ],
     "quantity": 275,
-    "capital": 23375.0
+    "capital": 23375.0,
+    "closed": true,
+    "exit_price": 0,
+    "exit_reason": "EXPIRED",
+    "pnl": -23375.0,
+    "exit_time": "2026-04-13T15:30:00"
   },
   {
     "timestamp": "2026-04-13T09:55:51.495068",
@@ -2916,7 +2928,12 @@
       86.0
     ],
     "quantity": 500,
-    "capital": 25000.0
+    "capital": 25000.0,
+    "closed": true,
+    "exit_price": 0,
+    "exit_reason": "EXPIRED",
+    "pnl": -25000.0,
+    "exit_time": "2026-04-13T15:30:00"
   },
   {
     "timestamp": "2026-04-13T12:01:26.496751",
@@ -3040,7 +3057,12 @@
     "message": "PAPER: BUY 225x NIFTY @ 110.0 | Adj Targets: [] | SL: None",
     "adjusted_targets": [],
     "quantity": 225,
-    "capital": 24750.0
+    "capital": 24750.0,
+    "closed": true,
+    "exit_price": 0,
+    "exit_reason": "EXPIRED",
+    "pnl": -24750.0,
+    "exit_time": "2026-04-13T15:30:00"
   },
   {
     "timestamp": "2026-04-13T14:04:11.744266",
@@ -3231,8 +3253,8 @@
     ],
     "quantity": 19,
     "capital": 24700.0,
-    "unrealized_pnl": 121.6,
-    "last_ltp": 1306.4
+    "unrealized_pnl": 39.9,
+    "last_ltp": 1302.1
   },
   {
     "timestamp": "2026-04-15T09:18:35.777354",
@@ -3272,8 +3294,12 @@
     ],
     "quantity": 63,
     "capital": 24708.6,
-    "unrealized_pnl": 88.2,
-    "last_ltp": 393.6
+    "unrealized_pnl": 333.9,
+    "last_ltp": 397.5,
+    "closed": true,
+    "exit_price": 397.5,
+    "exit_reason": "TARGET_HIT",
+    "pnl": 333.9
   },
   {
     "timestamp": "2026-04-15T09:18:42.267894",
@@ -3527,8 +3553,8 @@
     "adjusted_targets": [],
     "quantity": 19,
     "capital": 24365.6,
-    "unrealized_pnl": 2105.2,
-    "last_ltp": 1393.2
+    "unrealized_pnl": 1670.1,
+    "last_ltp": 1370.3
   },
   {
     "timestamp": "2026-04-15T09:31:39.518753",
@@ -3638,8 +3664,13 @@
     ],
     "quantity": 22,
     "capital": 24252.8,
-    "unrealized_pnl": -101.2,
-    "last_ltp": 1097.8
+    "unrealized_pnl": 0,
+    "last_ltp": 1079.4,
+    "closed": true,
+    "exit_price": 1079.4,
+    "exit_reason": "STOP_LOSS",
+    "pnl": -506.0,
+    "exit_time": "2026-04-20T09:16:15.767647"
   },
   {
     "timestamp": "2026-04-15T10:11:39.273476",
@@ -4142,8 +4173,8 @@
     "adjusted_targets": [],
     "quantity": 1,
     "capital": 251500.0,
-    "unrealized_pnl": 251251.61,
-    "last_ltp": 248.39
+    "unrealized_pnl": 251252.43,
+    "last_ltp": 247.57
   },
   {
     "timestamp": "2026-04-15T14:40:59.270767",
@@ -4181,8 +4212,8 @@
     ],
     "quantity": 10,
     "capital": 24877.0,
-    "unrealized_pnl": 68.0,
-    "last_ltp": 2494.5
+    "unrealized_pnl": -226.0,
+    "last_ltp": 2465.1
   },
   {
     "timestamp": "2026-04-15T14:50:17.525409",
@@ -4219,7 +4250,14 @@
       400.0
     ],
     "quantity": 500,
-    "capital": 140000.0
+    "capital": 140000.0,
+    "closed": true,
+    "exit_price": 511.3,
+    "exit_reason": "TARGET_HIT",
+    "pnl": 115650.0,
+    "exit_time": "2026-04-20T09:00:31.432574",
+    "last_ltp": 511.3,
+    "unrealized_pnl": 0
   },
   {
     "timestamp": "2026-04-15T15:58:08.539920",
@@ -4446,7 +4484,14 @@
       126.0
     ],
     "quantity": 500,
-    "capital": 45000.0
+    "capital": 45000.0,
+    "closed": true,
+    "exit_price": 492.8,
+    "exit_reason": "TARGET_HIT",
+    "pnl": 201400.0,
+    "exit_time": "2026-04-20T09:00:31.319339",
+    "last_ltp": 492.8,
+    "unrealized_pnl": 0
   },
   {
     "timestamp": "2026-04-16T09:52:56.021473",
@@ -4483,7 +4528,12 @@
       190.0
     ],
     "quantity": 190,
-    "capital": 24700.0
+    "capital": 24700.0,
+    "closed": true,
+    "exit_price": 0,
+    "exit_reason": "EXPIRED",
+    "pnl": -24700.0,
+    "exit_time": "2026-04-16T15:30:00"
   },
   {
     "timestamp": "2026-04-16T10:03:29.020592",
@@ -4520,7 +4570,14 @@
       187.2
     ],
     "quantity": 125,
-    "capital": 21000.0
+    "capital": 21000.0,
+    "closed": true,
+    "exit_price": 97.8,
+    "exit_reason": "STOP_LOSS",
+    "pnl": -8775.0,
+    "exit_time": "2026-04-20T09:00:15.100626",
+    "last_ltp": 97.8,
+    "unrealized_pnl": 0
   },
   {
     "timestamp": "2026-04-16T10:06:13.531391",
@@ -4683,8 +4740,8 @@
     ],
     "quantity": 82,
     "capital": 24903.4,
-    "unrealized_pnl": 254.2,
-    "last_ltp": 306.8
+    "unrealized_pnl": 106.6,
+    "last_ltp": 305
   },
   {
     "timestamp": "2026-04-16T11:26:37.538128",
@@ -4721,7 +4778,12 @@
       192.0
     ],
     "quantity": 230,
-    "capital": 24150.0
+    "capital": 24150.0,
+    "closed": true,
+    "exit_price": 0,
+    "exit_reason": "EXPIRED",
+    "pnl": -24150.0,
+    "exit_time": "2026-04-16T15:30:00"
   },
   {
     "timestamp": "2026-04-16T12:04:02.791763",
@@ -4758,7 +4820,14 @@
       182.4
     ],
     "quantity": 150,
-    "capital": 23400.0
+    "capital": 23400.0,
+    "closed": true,
+    "exit_price": 59.65,
+    "exit_reason": "STOP_LOSS",
+    "pnl": -14452.5,
+    "exit_time": "2026-04-20T09:00:31.128021",
+    "last_ltp": 59.65,
+    "unrealized_pnl": 0
   },
   {
     "timestamp": "2026-04-16T14:33:55.768999",
@@ -4833,7 +4902,9 @@
     "message": "PAPER: BUY 500x ADANIENSOL @ 54.5 | Adj Targets: [] | SL: None",
     "adjusted_targets": [],
     "quantity": 500,
-    "capital": 27250.0
+    "capital": 27250.0,
+    "unrealized_pnl": 8000.0,
+    "last_ltp": 70.5
   },
   {
     "timestamp": "2026-04-16T14:52:11.019222",
@@ -4871,8 +4942,8 @@
     ],
     "quantity": 230,
     "capital": 24978.0,
-    "unrealized_pnl": -207.0,
-    "last_ltp": 107.7
+    "unrealized_pnl": -437.0,
+    "last_ltp": 106.7
   },
   {
     "timestamp": "2026-04-16T14:55:21.767092",
@@ -5111,7 +5182,13 @@
       2560.0
     ],
     "quantity": 500,
-    "capital": 1100000.0
+    "capital": 1100000.0,
+    "unrealized_pnl": -390750.0,
+    "last_ltp": 1418.5,
+    "closed": true,
+    "exit_price": 1418.5,
+    "exit_reason": "STOP_LOSS",
+    "pnl": -390750.0
   },
   {
     "timestamp": "2026-04-17T09:41:27.753375",
@@ -5149,8 +5226,8 @@
     ],
     "quantity": 258,
     "capital": 24948.6,
-    "unrealized_pnl": 309.6,
-    "last_ltp": 97.9
+    "unrealized_pnl": 167.7,
+    "last_ltp": 97.35
   },
   {
     "timestamp": "2026-04-17T09:47:27.616781",
@@ -5231,8 +5308,12 @@
     ],
     "quantity": 22,
     "capital": 23962.4,
-    "unrealized_pnl": 444.4,
-    "last_ltp": 1109.4
+    "unrealized_pnl": 567.6,
+    "last_ltp": 1115,
+    "closed": true,
+    "exit_price": 1115,
+    "exit_reason": "TARGET_HIT",
+    "pnl": 567.6
   },
   {
     "timestamp": "2026-04-17T10:14:14.264133",
@@ -5272,8 +5353,8 @@
     ],
     "quantity": 16,
     "capital": 24224.0,
-    "unrealized_pnl": -614.4,
-    "last_ltp": 1475.6
+    "unrealized_pnl": -716.8,
+    "last_ltp": 1469.2
   },
   {
     "timestamp": "2026-04-17T10:16:04.934946",
@@ -5311,8 +5392,8 @@
     ],
     "quantity": 19,
     "capital": 24817.8,
-    "unrealized_pnl": 3.8,
-    "last_ltp": 1306.4
+    "unrealized_pnl": -77.9,
+    "last_ltp": 1302.1
   },
   {
     "timestamp": "2026-04-17T10:20:21.358436",
@@ -5386,8 +5467,12 @@
     ],
     "quantity": 85,
     "capital": 24709.5,
-    "unrealized_pnl": -379.95,
-    "last_ltp": 286.23
+    "unrealized_pnl": -782.0,
+    "last_ltp": 281.5,
+    "closed": true,
+    "exit_price": 281.5,
+    "exit_reason": "STOP_LOSS",
+    "pnl": -782.0
   },
   {
     "timestamp": "2026-04-17T10:25:28.581190",
@@ -5427,8 +5512,8 @@
     ],
     "quantity": 250,
     "capital": 25000.0,
-    "unrealized_pnl": -525.0,
-    "last_ltp": 97.9
+    "unrealized_pnl": -662.5,
+    "last_ltp": 97.35
   },
   {
     "timestamp": "2026-04-17T10:27:31.611265",
@@ -5465,7 +5550,14 @@
       162.8
     ],
     "quantity": 175,
-    "capital": 23975.0
+    "capital": 23975.0,
+    "closed": true,
+    "exit_price": 96.9,
+    "exit_reason": "STOP_LOSS",
+    "pnl": -7017.5,
+    "exit_time": "2026-04-20T09:16:15.099587",
+    "last_ltp": 96.9,
+    "unrealized_pnl": 0
   },
   {
     "timestamp": "2026-04-17T10:30:59.661510",
@@ -5505,8 +5597,8 @@
     ],
     "quantity": 22,
     "capital": 24398.0,
-    "unrealized_pnl": 8.8,
-    "last_ltp": 1109.4
+    "unrealized_pnl": -92.4,
+    "last_ltp": 1104.8
   },
   {
     "timestamp": "2026-04-17T10:59:29.737201",
@@ -5587,8 +5679,8 @@
     ],
     "quantity": 70,
     "capital": 24850.0,
-    "unrealized_pnl": 217.0,
-    "last_ltp": 358.1
+    "unrealized_pnl": 283.5,
+    "last_ltp": 359.05
   },
   {
     "timestamp": "2026-04-17T11:53:33.703271",
@@ -5664,7 +5756,14 @@
       218.0
     ],
     "quantity": 125,
-    "capital": 21250.0
+    "capital": 21250.0,
+    "closed": true,
+    "exit_price": 119.5,
+    "exit_reason": "STOP_LOSS",
+    "pnl": -6312.5,
+    "exit_time": "2026-04-20T09:16:15.483642",
+    "last_ltp": 119.5,
+    "unrealized_pnl": 0
   },
   {
     "timestamp": "2026-04-17T12:32:52.410917",
@@ -5702,8 +5801,13 @@
     ],
     "quantity": 11,
     "capital": 22935.0,
-    "unrealized_pnl": 227.7,
-    "last_ltp": 2105.7
+    "unrealized_pnl": 0,
+    "last_ltp": 2131.0,
+    "closed": true,
+    "exit_price": 2131.0,
+    "exit_reason": "TARGET_HIT",
+    "pnl": 506.0,
+    "exit_time": "2026-04-20T10:32:49.355074"
   },
   {
     "timestamp": "2026-04-17T13:04:47.258773",
@@ -5741,8 +5845,12 @@
     ],
     "quantity": 7,
     "capital": 23534.0,
-    "unrealized_pnl": -161.7,
-    "last_ltp": 3338.9
+    "unrealized_pnl": -434.0,
+    "last_ltp": 3300,
+    "closed": true,
+    "exit_price": 3300,
+    "exit_reason": "STOP_LOSS",
+    "pnl": -434.0
   },
   {
     "timestamp": "2026-04-17T13:20:31.240478",
@@ -5780,8 +5888,8 @@
     ],
     "quantity": 281,
     "capital": 24994.95,
-    "unrealized_pnl": 233.23,
-    "last_ltp": 89.78
+    "unrealized_pnl": -14.05,
+    "last_ltp": 88.9
   },
   {
     "timestamp": "2026-04-17T13:50:09.794052",
@@ -5857,8 +5965,12 @@
     ],
     "quantity": 11,
     "capital": 23298.0,
-    "unrealized_pnl": -135.3,
-    "last_ltp": 2105.7
+    "unrealized_pnl": 295.9,
+    "last_ltp": 2144.9,
+    "closed": true,
+    "exit_price": 2144.9,
+    "exit_reason": "TARGET_HIT",
+    "pnl": 295.9
   },
   {
     "timestamp": "2026-04-17T13:58:05.284034",
@@ -5898,8 +6010,12 @@
     ],
     "quantity": 20,
     "capital": 24800.0,
-    "unrealized_pnl": 6.0,
-    "last_ltp": 1240.3
+    "unrealized_pnl": 310.0,
+    "last_ltp": 1255.5,
+    "closed": true,
+    "exit_price": 1255.5,
+    "exit_reason": "TARGET_HIT",
+    "pnl": 310.0
   },
   {
     "timestamp": "2026-04-17T14:06:10.131983",
@@ -5937,7 +6053,392 @@
     ],
     "quantity": 95,
     "capital": 24852.0,
-    "unrealized_pnl": -14.25,
-    "last_ltp": 261.45
+    "unrealized_pnl": -36.1,
+    "last_ltp": 261.22
+  },
+  {
+    "timestamp": "2026-04-17T16:47:42.481170",
+    "signal": {
+      "raw_message": "Antique on (17-Apr-26)\n\nInitiating Coverage on Flair Writing Industries: BUY | TP 520 | A Creative Steal Deal\n\nWipro: HOLD | TP 225 | Muted 4Q; 1Q guidance points to a sluggish start to FY27\n\nHDFC Life Insurance Company: BUY | TP 740 | Growth / margins bottoming-out; valuation attractive\n\nHDFC Asset Management Company: BUY | TP 3100 | Sustained flows and steady yields drive strong operating show; TER overhang manageable\n\nOil & Gas: FY27 is shaping up strong for upstream\n\nONGC | BUY | TP 342 |\nOil India | BUY | TP 582 |\n\nAye Finance: Asset liability remix to aid RoAs",
+      "source": "telegram",
+      "channel_id": "-1001826034372",
+      "channel_name": "Kotak Neo",
+      "timestamp": "2026-04-17T16:47:38.338747",
+      "action": "BUY",
+      "symbol": "ANTIQUE",
+      "exchange": "NSE",
+      "asset_type": "equity",
+      "strike": null,
+      "option_type": "",
+      "expiry": "",
+      "entry_price": null,
+      "entry_range": null,
+      "targets": [],
+      "stop_loss": null,
+      "signal_type": "intraday",
+      "cmp": null,
+      "confidence": 50,
+      "parse_notes": [
+        "No valid targets found",
+        "No stop loss found"
+      ],
+      "lot_size": 0
+    },
+    "status": "rejected",
+    "order_id": null,
+    "broker": null,
+    "message": "Incomplete signal (missing action/symbol/price)",
+    "adjusted_targets": [],
+    "quantity": 0,
+    "capital": 0
+  },
+  {
+    "timestamp": "2026-04-17T18:05:09.572029",
+    "signal": {
+      "raw_message": "OPTION SHORT STRANGLE SELL 30APRGOLD145kPE @590  AND SELL GOLD160CE at 800 TOTAL INFLOW 1390 SL ABV 2290 TGT 100-0",
+      "source": "telegram",
+      "channel_id": "-1001156121763",
+      "channel_name": "Bulls Channel / Way2Laabh",
+      "timestamp": "2026-04-17T18:05:05.365421",
+      "action": "SELL",
+      "symbol": "STRANGLE",
+      "exchange": "NSE",
+      "asset_type": "equity",
+      "strike": null,
+      "option_type": "",
+      "expiry": "",
+      "entry_price": 590.0,
+      "entry_range": null,
+      "targets": [
+        100.0
+      ],
+      "stop_loss": null,
+      "signal_type": "momentum",
+      "cmp": null,
+      "confidence": 75,
+      "parse_notes": [
+        "No stop loss found"
+      ],
+      "lot_size": 0
+    },
+    "status": "paper_executed",
+    "order_id": "PAPER-1776429309",
+    "broker": "PAPER",
+    "message": "PAPER: SELL 42x STRANGLE @ 590.0 | Adj Targets: [296.0] | SL: None",
+    "adjusted_targets": [
+      296.0
+    ],
+    "quantity": 42,
+    "capital": 24780.0
+  },
+  {
+    "timestamp": "2026-04-17T18:22:45.855847",
+    "signal": {
+      "raw_message": "Rsky BUY CRUDE BET 8340-20 SL BELOW 8190 TGT 8500-8570\n\nUS- IRAN TALKS EXPECTED IN ISLAMABAD, LIKELY ON SUNDAY -  AXIOS",
+      "source": "telegram",
+      "channel_id": "-1001156121763",
+      "channel_name": "Bulls Channel / Way2Laabh",
+      "timestamp": "2026-04-17T18:22:41.748963",
+      "action": "BUY",
+      "symbol": "RSKY",
+      "exchange": "NSE",
+      "asset_type": "equity",
+      "strike": null,
+      "option_type": "",
+      "expiry": "",
+      "entry_price": 8190.0,
+      "entry_range": null,
+      "targets": [
+        8500.0
+      ],
+      "stop_loss": 8190.0,
+      "signal_type": "swing",
+      "cmp": null,
+      "confidence": 90,
+      "parse_notes": [],
+      "lot_size": 0
+    },
+    "status": "paper_executed",
+    "order_id": "PAPER-1776430365",
+    "broker": "PAPER",
+    "message": "PAPER: BUY 3x RSKY @ 8190.0 | Adj Targets: [8376.0] | SL: 8190.0",
+    "adjusted_targets": [
+      8376.0
+    ],
+    "quantity": 3,
+    "capital": 24570.0
+  },
+  {
+    "timestamp": "2026-04-20T10:43:17.310405",
+    "signal": {
+      "raw_message": "OPTIONS BUY CROMPTON 265 CALL @ 7.50, SL 2.90 TGT 15",
+      "source": "whatsapp",
+      "channel_id": "120363402587466290@g.us",
+      "channel_name": "STOCK OPTION manasjaiswal.com",
+      "timestamp": "2026-04-20T10:43:16.208478",
+      "action": "BUY",
+      "symbol": "CROMPTON",
+      "exchange": "NFO",
+      "asset_type": "options",
+      "strike": 265.0,
+      "option_type": "CE",
+      "expiry": "",
+      "entry_price": 7.5,
+      "entry_range": null,
+      "targets": [
+        15.0
+      ],
+      "stop_loss": 2.9,
+      "signal_type": "momentum",
+      "cmp": 266.79,
+      "confidence": 100,
+      "parse_notes": [],
+      "lot_size": 0
+    },
+    "status": "failed",
+    "order_id": null,
+    "broker": "kite",
+    "message": "`quantity` should be multiple of 1800.",
+    "adjusted_targets": [
+      12.0
+    ],
+    "quantity": 3000,
+    "capital": 22500.0
+  },
+  {
+    "timestamp": "2026-04-20T10:44:31.828322",
+    "source": "whatsapp",
+    "channel_name": "manasjaiswal.com",
+    "action": "BUY",
+    "trading_symbol": "BANKNIFTY26APR57000CE",
+    "exchange": "NFO",
+    "asset_type": "options",
+    "entry_price": 783.9,
+    "stop_loss": 419,
+    "adjusted_targets": [
+      1144.0
+    ],
+    "original_targets": [
+      1400
+    ],
+    "quantity": 30,
+    "order_id": "260420190584879",
+    "broker": "kite",
+    "status": "executed",
+    "option_type": "CE",
+    "paper": false
+  },
+  {
+    "timestamp": "2026-04-20T10:44:54.672265",
+    "source": "whatsapp",
+    "channel_name": "manasjaiswal.com",
+    "action": "BUY",
+    "trading_symbol": "NIFTY26APR24500CE",
+    "exchange": "NFO",
+    "asset_type": "options",
+    "entry_price": 245.5,
+    "stop_loss": 124,
+    "adjusted_targets": [
+      366.0
+    ],
+    "original_targets": [
+      450
+    ],
+    "quantity": 65,
+    "order_id": "260420190586096",
+    "broker": "kite",
+    "status": "executed",
+    "option_type": "CE",
+    "paper": false
+  },
+  {
+    "timestamp": "2026-04-20T10:44:54.672304",
+    "source": "whatsapp",
+    "channel_name": "manasjaiswal.com",
+    "action": "BUY",
+    "trading_symbol": "POWERINDIA26APR30000CE",
+    "exchange": "NFO",
+    "asset_type": "options",
+    "entry_price": 552.6,
+    "stop_loss": 264,
+    "adjusted_targets": [
+      808.0
+    ],
+    "original_targets": [
+      1000
+    ],
+    "quantity": 50,
+    "order_id": "260420190586097",
+    "broker": "kite",
+    "status": "executed",
+    "option_type": "CE",
+    "paper": false
+  },
+  {
+    "timestamp": "2026-04-20T10:54:12.453161",
+    "source": "whatsapp",
+    "channel_name": "STOCK OPTION manasjaiswal.com",
+    "action": "BUY",
+    "trading_symbol": "CROMPTON26APR265CE",
+    "exchange": "NFO",
+    "asset_type": "options",
+    "entry_price": 7.2,
+    "stop_loss": 2.9,
+    "adjusted_targets": [
+      12.0
+    ],
+    "original_targets": [
+      15
+    ],
+    "quantity": 1800,
+    "order_id": "260420190618027",
+    "broker": "kite",
+    "status": "executed",
+    "option_type": "CE",
+    "paper": false
+  },
+  {
+    "timestamp": "2026-04-20T10:54:12.453187",
+    "source": "whatsapp",
+    "channel_name": "STOCK OPTION manasjaiswal.com",
+    "action": "BUY",
+    "trading_symbol": "DELHIVERY26APR470CE",
+    "exchange": "NFO",
+    "asset_type": "options",
+    "entry_price": 13.8,
+    "stop_loss": 5.9,
+    "adjusted_targets": [
+      23.66
+    ],
+    "original_targets": [
+      30
+    ],
+    "quantity": 2075,
+    "order_id": "260420190618028",
+    "broker": "kite",
+    "status": "executed",
+    "option_type": "CE",
+    "paper": false
+  },
+  {
+    "timestamp": "2026-04-20T11:14:57.033999",
+    "signal": {
+      "raw_message": "OPTIONS BUY CANARA BANK 145 CALL 145 CALL @ 3, SL 1.45 TGT 6",
+      "source": "whatsapp",
+      "channel_id": "120363402587466290@g.us",
+      "channel_name": "STOCK OPTION manasjaiswal.com",
+      "timestamp": "2026-04-20T11:14:55.909639",
+      "action": "BUY",
+      "symbol": "CANBK",
+      "exchange": "NFO",
+      "asset_type": "options",
+      "strike": 145.0,
+      "option_type": "CE",
+      "expiry": "",
+      "entry_price": 3.0,
+      "entry_range": null,
+      "targets": [
+        6.0
+      ],
+      "stop_loss": 1.45,
+      "signal_type": "momentum",
+      "cmp": 144.2,
+      "confidence": 100,
+      "parse_notes": [],
+      "lot_size": 0
+    },
+    "status": "executed",
+    "order_id": "260420190682459",
+    "broker": "kite",
+    "message": "Order placed",
+    "adjusted_targets": [
+      4.8
+    ],
+    "quantity": 6750,
+    "capital": 20250.0,
+    "unrealized_pnl": -5737.5,
+    "last_ltp": 2.15
+  },
+  {
+    "timestamp": "2026-04-20T12:16:13.982319",
+    "signal": {
+      "raw_message": "OPTIONS BUY TIINDIA 2900 CALL @ 50, SL24 TGT 100",
+      "source": "whatsapp",
+      "channel_id": "120363402587466290@g.us",
+      "channel_name": "STOCK OPTION manasjaiswal.com",
+      "timestamp": "2026-04-20T12:16:12.766977",
+      "action": "BUY",
+      "symbol": "TIINDIA",
+      "exchange": "NFO",
+      "asset_type": "options",
+      "strike": 2900.0,
+      "option_type": "CE",
+      "expiry": "",
+      "entry_price": 50.0,
+      "entry_range": null,
+      "targets": [
+        100.0
+      ],
+      "stop_loss": 24.0,
+      "signal_type": "momentum",
+      "cmp": 2856.2,
+      "confidence": 100,
+      "parse_notes": [],
+      "lot_size": 0
+    },
+    "status": "executed",
+    "order_id": "260420190844346",
+    "broker": "kite",
+    "message": "Order placed",
+    "adjusted_targets": [
+      80.0
+    ],
+    "quantity": 400,
+    "capital": 20000.0,
+    "unrealized_pnl": 3600.0,
+    "last_ltp": 59
+  },
+  {
+    "timestamp": "2026-04-20T14:23:47.486470",
+    "signal": {
+      "raw_message": "OPTIONS BUY UNO MINDA 1140 CALL @ 21, SL 9 TGT 40",
+      "source": "whatsapp",
+      "channel_id": "120363402587466290@g.us",
+      "channel_name": "STOCK OPTION manasjaiswal.com",
+      "timestamp": "2026-04-20T14:23:46.469993",
+      "action": "BUY",
+      "symbol": "UNOMINDA",
+      "exchange": "NFO",
+      "asset_type": "options",
+      "strike": 1140.0,
+      "option_type": "CE",
+      "expiry": "",
+      "entry_price": 21.0,
+      "entry_range": null,
+      "targets": [
+        40.0
+      ],
+      "stop_loss": 9.0,
+      "signal_type": "momentum",
+      "cmp": 1131.9,
+      "confidence": 100,
+      "parse_notes": [],
+      "lot_size": 0
+    },
+    "status": "executed",
+    "order_id": "260420191203962",
+    "broker": "kite",
+    "message": "Order placed",
+    "adjusted_targets": [
+      32.4
+    ],
+    "quantity": 1100,
+    "capital": 23100.0,
+    "gtt_id": {
+      "trigger_id": 315831263
+    },
+    "gtt_status": "active",
+    "unrealized_pnl": -1760.0,
+    "last_ltp": 19.4
   }
 ]
