@@ -3253,8 +3253,12 @@
     ],
     "quantity": 19,
     "capital": 24700.0,
-    "unrealized_pnl": 39.9,
-    "last_ltp": 1302.1
+    "unrealized_pnl": 374.3,
+    "last_ltp": 1319.7,
+    "closed": true,
+    "exit_price": 1319.7,
+    "exit_reason": "TARGET_HIT",
+    "pnl": 374.3
   },
   {
     "timestamp": "2026-04-15T09:18:35.777354",
@@ -3553,8 +3557,8 @@
     "adjusted_targets": [],
     "quantity": 19,
     "capital": 24365.6,
-    "unrealized_pnl": 1670.1,
-    "last_ltp": 1370.3
+    "unrealized_pnl": 1523.8,
+    "last_ltp": 1362.6
   },
   {
     "timestamp": "2026-04-15T09:31:39.518753",
@@ -4015,7 +4019,14 @@
       926.96
     ],
     "quantity": 27,
-    "capital": 24499.8
+    "capital": 24499.8,
+    "closed": true,
+    "exit_price": 927.85,
+    "exit_reason": "TARGET_HIT",
+    "pnl": 552.15,
+    "exit_time": "2026-04-21T10:32:52.967654",
+    "last_ltp": 927.85,
+    "unrealized_pnl": 0
   },
   {
     "timestamp": "2026-04-15T12:24:13.019118",
@@ -4173,8 +4184,8 @@
     "adjusted_targets": [],
     "quantity": 1,
     "capital": 251500.0,
-    "unrealized_pnl": 251252.43,
-    "last_ltp": 247.57
+    "unrealized_pnl": 251252.58,
+    "last_ltp": 247.42
   },
   {
     "timestamp": "2026-04-15T14:40:59.270767",
@@ -4212,8 +4223,8 @@
     ],
     "quantity": 10,
     "capital": 24877.0,
-    "unrealized_pnl": -226.0,
-    "last_ltp": 2465.1
+    "unrealized_pnl": -167.0,
+    "last_ltp": 2471
   },
   {
     "timestamp": "2026-04-15T14:50:17.525409",
@@ -4740,8 +4751,8 @@
     ],
     "quantity": 82,
     "capital": 24903.4,
-    "unrealized_pnl": 106.6,
-    "last_ltp": 305
+    "unrealized_pnl": 487.9,
+    "last_ltp": 309.65
   },
   {
     "timestamp": "2026-04-16T11:26:37.538128",
@@ -4903,8 +4914,8 @@
     "adjusted_targets": [],
     "quantity": 500,
     "capital": 27250.0,
-    "unrealized_pnl": 8000.0,
-    "last_ltp": 70.5
+    "unrealized_pnl": 13700.0,
+    "last_ltp": 81.9
   },
   {
     "timestamp": "2026-04-16T14:52:11.019222",
@@ -4942,8 +4953,8 @@
     ],
     "quantity": 230,
     "capital": 24978.0,
-    "unrealized_pnl": -437.0,
-    "last_ltp": 106.7
+    "unrealized_pnl": 586.5,
+    "last_ltp": 111.15
   },
   {
     "timestamp": "2026-04-16T14:55:21.767092",
@@ -5226,8 +5237,8 @@
     ],
     "quantity": 258,
     "capital": 24948.6,
-    "unrealized_pnl": 167.7,
-    "last_ltp": 97.35
+    "unrealized_pnl": 864.3,
+    "last_ltp": 100.05
   },
   {
     "timestamp": "2026-04-17T09:47:27.616781",
@@ -5353,8 +5364,8 @@
     ],
     "quantity": 16,
     "capital": 24224.0,
-    "unrealized_pnl": -716.8,
-    "last_ltp": 1469.2
+    "unrealized_pnl": -902.4,
+    "last_ltp": 1457.6
   },
   {
     "timestamp": "2026-04-17T10:16:04.934946",
@@ -5392,8 +5403,8 @@
     ],
     "quantity": 19,
     "capital": 24817.8,
-    "unrealized_pnl": -77.9,
-    "last_ltp": 1302.1
+    "unrealized_pnl": 429.4,
+    "last_ltp": 1328.8
   },
   {
     "timestamp": "2026-04-17T10:20:21.358436",
@@ -5512,8 +5523,8 @@
     ],
     "quantity": 250,
     "capital": 25000.0,
-    "unrealized_pnl": -662.5,
-    "last_ltp": 97.35
+    "unrealized_pnl": 12.5,
+    "last_ltp": 100.05
   },
   {
     "timestamp": "2026-04-17T10:27:31.611265",
@@ -5597,8 +5608,12 @@
     ],
     "quantity": 22,
     "capital": 24398.0,
-    "unrealized_pnl": -92.4,
-    "last_ltp": 1104.8
+    "unrealized_pnl": 280.5,
+    "last_ltp": 1121.75,
+    "closed": true,
+    "exit_price": 1121.75,
+    "exit_reason": "TARGET_HIT",
+    "pnl": 280.5
   },
   {
     "timestamp": "2026-04-17T10:59:29.737201",
@@ -5679,8 +5694,8 @@
     ],
     "quantity": 70,
     "capital": 24850.0,
-    "unrealized_pnl": 283.5,
-    "last_ltp": 359.05
+    "unrealized_pnl": 455.0,
+    "last_ltp": 361.5
   },
   {
     "timestamp": "2026-04-17T11:53:33.703271",
@@ -5888,8 +5903,8 @@
     ],
     "quantity": 281,
     "capital": 24994.95,
-    "unrealized_pnl": -14.05,
-    "last_ltp": 88.9
+    "unrealized_pnl": -134.88,
+    "last_ltp": 88.47
   },
   {
     "timestamp": "2026-04-17T13:50:09.794052",
@@ -6053,8 +6068,8 @@
     ],
     "quantity": 95,
     "capital": 24852.0,
-    "unrealized_pnl": -36.1,
-    "last_ltp": 261.22
+    "unrealized_pnl": -280.25,
+    "last_ltp": 258.65
   },
   {
     "timestamp": "2026-04-17T16:47:42.481170",
@@ -6356,8 +6371,8 @@
     ],
     "quantity": 6750,
     "capital": 20250.0,
-    "unrealized_pnl": -5737.5,
-    "last_ltp": 2.15
+    "unrealized_pnl": -4387.5,
+    "last_ltp": 2.35
   },
   {
     "timestamp": "2026-04-20T12:16:13.982319",
@@ -6395,8 +6410,8 @@
     ],
     "quantity": 400,
     "capital": 20000.0,
-    "unrealized_pnl": 3600.0,
-    "last_ltp": 59
+    "unrealized_pnl": -900.0,
+    "last_ltp": 47.75
   },
   {
     "timestamp": "2026-04-20T14:23:47.486470",
@@ -6438,7 +6453,376 @@
       "trigger_id": 315831263
     },
     "gtt_status": "active",
-    "unrealized_pnl": -1760.0,
-    "last_ltp": 19.4
+    "unrealized_pnl": 6270.0,
+    "last_ltp": 26.7
+  },
+  {
+    "timestamp": "2026-04-21T09:46:28.005199",
+    "signal": {
+      "raw_message": "NIFTY OPTIONS BUY NIFTY 24500 CALL @ 255, SL 184 TGT 400",
+      "source": "whatsapp",
+      "channel_id": "120363404783219558@g.us",
+      "channel_name": "NIFTY manasjaiswal.com",
+      "timestamp": "2026-04-21T09:46:23.845173",
+      "action": "BUY",
+      "symbol": "NIFTY",
+      "exchange": "NFO",
+      "asset_type": "options",
+      "strike": 24500.0,
+      "option_type": "CE",
+      "expiry": "",
+      "entry_price": 255.0,
+      "entry_range": null,
+      "targets": [
+        400.0
+      ],
+      "stop_loss": 184.0,
+      "signal_type": "momentum",
+      "cmp": null,
+      "confidence": 100,
+      "parse_notes": [],
+      "lot_size": 0
+    },
+    "status": "executed",
+    "order_id": "260421190309400",
+    "broker": "kite",
+    "message": "Order placed",
+    "adjusted_targets": [
+      342.0
+    ],
+    "quantity": 65,
+    "capital": 16575.0,
+    "gtt_id": {
+      "trigger_id": 315919574
+    },
+    "gtt_status": "active"
+  },
+  {
+    "timestamp": "2026-04-21T10:32:25.257380",
+    "signal": {
+      "raw_message": "OPTIONS BUY DABUR 450 CALL @ 9  SL 3.90 TGT 19",
+      "source": "whatsapp",
+      "channel_id": "120363402587466290@g.us",
+      "channel_name": "STOCK OPTION manasjaiswal.com",
+      "timestamp": "2026-04-21T10:32:24.057474",
+      "action": "BUY",
+      "symbol": "DABUR",
+      "exchange": "NFO",
+      "asset_type": "options",
+      "strike": 450.0,
+      "option_type": "CE",
+      "expiry": "",
+      "entry_price": 9.0,
+      "entry_range": null,
+      "targets": [
+        19.0
+      ],
+      "stop_loss": 3.9,
+      "signal_type": "momentum",
+      "cmp": 452.7,
+      "confidence": 100,
+      "parse_notes": [],
+      "lot_size": 0
+    },
+    "status": "executed",
+    "order_id": "260421190535098",
+    "broker": "kite",
+    "message": "Order placed",
+    "adjusted_targets": [
+      15.0
+    ],
+    "quantity": 2500,
+    "capital": 22500.0,
+    "gtt_id": {
+      "trigger_id": 315940951
+    },
+    "gtt_status": "active",
+    "unrealized_pnl": 500.0,
+    "last_ltp": 9.2
+  },
+  {
+    "timestamp": "2026-04-21T10:34:08.689290",
+    "signal": {
+      "raw_message": "OPTIONS BUY INDUS TOWER 420 CALL @ 6, SL 2.90 TGT 12",
+      "source": "whatsapp",
+      "channel_id": "120363402587466290@g.us",
+      "channel_name": "STOCK OPTION manasjaiswal.com",
+      "timestamp": "2026-04-21T10:34:04.751890",
+      "action": "BUY",
+      "symbol": "INDUS",
+      "exchange": "NFO",
+      "asset_type": "options",
+      "strike": 420.0,
+      "option_type": "CE",
+      "expiry": "",
+      "entry_price": 6.0,
+      "entry_range": null,
+      "targets": [
+        12.0
+      ],
+      "stop_loss": 2.9,
+      "signal_type": "momentum",
+      "cmp": null,
+      "confidence": 100,
+      "parse_notes": [],
+      "lot_size": 0
+    },
+    "status": "failed",
+    "order_id": null,
+    "broker": "kite",
+    "message": "The instrument you are placing an order for has either expired or does not exist.",
+    "adjusted_targets": [
+      9.6
+    ],
+    "quantity": 3500,
+    "capital": 21000.0
+  },
+  {
+    "timestamp": "2026-04-21T10:46:10.463847",
+    "signal": {
+      "raw_message": "OPTIONS BUY GODREJ PROP 1840 CALL @ 36, SL 14 TGT 75",
+      "source": "whatsapp",
+      "channel_id": "120363402587466290@g.us",
+      "channel_name": "STOCK OPTION manasjaiswal.com",
+      "timestamp": "2026-04-21T10:46:06.053025",
+      "action": "BUY",
+      "symbol": "GODREJ",
+      "exchange": "NFO",
+      "asset_type": "options",
+      "strike": 1840.0,
+      "option_type": "CE",
+      "expiry": "",
+      "entry_price": 36.0,
+      "entry_range": null,
+      "targets": [
+        75.0
+      ],
+      "stop_loss": 14.0,
+      "signal_type": "momentum",
+      "cmp": null,
+      "confidence": 100,
+      "parse_notes": [],
+      "lot_size": 0
+    },
+    "status": "failed",
+    "order_id": null,
+    "broker": "kite",
+    "message": "The instrument you are placing an order for has either expired or does not exist.",
+    "adjusted_targets": [
+      59.4
+    ],
+    "quantity": 500,
+    "capital": 18000.0
+  },
+  {
+    "timestamp": "2026-04-21T11:28:27.927955",
+    "signal": {
+      "raw_message": "OPTIONS BUY MANAPPURAM 280 CALL @ 6, SL 2.90 TGT 12",
+      "source": "whatsapp",
+      "channel_id": "120363402587466290@g.us",
+      "channel_name": "STOCK OPTION manasjaiswal.com",
+      "timestamp": "2026-04-21T11:28:26.851140",
+      "action": "BUY",
+      "symbol": "MANAPPURAM",
+      "exchange": "NFO",
+      "asset_type": "options",
+      "strike": 280.0,
+      "option_type": "CE",
+      "expiry": "",
+      "entry_price": 6.0,
+      "entry_range": null,
+      "targets": [
+        12.0
+      ],
+      "stop_loss": 2.9,
+      "signal_type": "momentum",
+      "cmp": 280.0,
+      "confidence": 100,
+      "parse_notes": [],
+      "lot_size": 0
+    },
+    "status": "executed",
+    "order_id": "260421190742786",
+    "broker": "kite",
+    "message": "Order placed",
+    "adjusted_targets": [
+      9.6
+    ],
+    "quantity": 3000,
+    "capital": 18000.0,
+    "gtt_id": {
+      "trigger_id": 315959802
+    },
+    "gtt_status": "active",
+    "unrealized_pnl": 2550.0,
+    "last_ltp": 6.85
+  },
+  {
+    "timestamp": "2026-04-21T12:42:21.888371",
+    "signal": {
+      "raw_message": "OPTIONS BUY MUTHOOT FINANCE 3600 CALL @ 88.70, SL 49 TGT 175",
+      "source": "whatsapp",
+      "channel_id": "120363402587466290@g.us",
+      "channel_name": "STOCK OPTION manasjaiswal.com",
+      "timestamp": "2026-04-21T12:42:20.877622",
+      "action": "BUY",
+      "symbol": "MUTHOOTFIN",
+      "exchange": "NFO",
+      "asset_type": "options",
+      "strike": 3600.0,
+      "option_type": "CE",
+      "expiry": "",
+      "entry_price": 88.7,
+      "entry_range": null,
+      "targets": [
+        175.0
+      ],
+      "stop_loss": 49.0,
+      "signal_type": "momentum",
+      "cmp": 3623.0,
+      "confidence": 100,
+      "parse_notes": [],
+      "lot_size": 0
+    },
+    "status": "executed",
+    "order_id": "260421190981818",
+    "broker": "kite",
+    "message": "Order placed",
+    "adjusted_targets": [
+      140.48
+    ],
+    "quantity": 275,
+    "capital": 24392.5,
+    "gtt_id": {
+      "trigger_id": 315982173
+    },
+    "gtt_status": "active",
+    "unrealized_pnl": -1842.5,
+    "last_ltp": 82
+  },
+  {
+    "timestamp": "2026-04-21T13:33:05.970721",
+    "signal": {
+      "raw_message": "Technical Chart Pattern  BUY DEEPAKFERT  CMP 1272.00 SL 1220.00 TGT 1368.50 \n\nStock has given a bullish pennat breakout. Sustaining above 20 DEMA",
+      "source": "whatsapp",
+      "channel_id": "120363422671480756@g.us",
+      "channel_name": "Trade And Investment With MO",
+      "timestamp": "2026-04-21T13:33:01.827450",
+      "action": "BUY",
+      "symbol": "CHART",
+      "exchange": "NSE",
+      "asset_type": "equity",
+      "strike": null,
+      "option_type": "",
+      "expiry": "",
+      "entry_price": 1272.0,
+      "entry_range": null,
+      "targets": [
+        1368.5
+      ],
+      "stop_loss": 1220.0,
+      "signal_type": "momentum",
+      "cmp": null,
+      "confidence": 90,
+      "parse_notes": [],
+      "lot_size": 0
+    },
+    "status": "failed",
+    "order_id": null,
+    "broker": "groww",
+    "message": "No registered IPs found for this user. Please register your IPs first.",
+    "adjusted_targets": [
+      1329.9
+    ],
+    "quantity": 27,
+    "capital": 34344.0
+  },
+  {
+    "timestamp": "2026-04-21T14:31:22.353681",
+    "signal": {
+      "raw_message": "OPTIONS BUY PETRONET 280 CALL @ 4.95, SL 2.90 TGT 9",
+      "source": "whatsapp",
+      "channel_id": "120363402587466290@g.us",
+      "channel_name": "STOCK OPTION manasjaiswal.com",
+      "timestamp": "2026-04-21T14:31:20.478361",
+      "action": "BUY",
+      "symbol": "PETRONET",
+      "exchange": "NFO",
+      "asset_type": "options",
+      "strike": 280.0,
+      "option_type": "CE",
+      "expiry": "",
+      "entry_price": 4.95,
+      "entry_range": null,
+      "targets": [
+        9.0,
+        80.0
+      ],
+      "stop_loss": 2.9,
+      "signal_type": "momentum",
+      "cmp": 277.5,
+      "confidence": 100,
+      "parse_notes": [],
+      "lot_size": 0
+    },
+    "status": "executed",
+    "order_id": "260421191394434",
+    "broker": "kite",
+    "message": "Order placed",
+    "adjusted_targets": [
+      7.38,
+      49.98
+    ],
+    "quantity": 7600,
+    "capital": 37620.0,
+    "gtt_id": {
+      "trigger_id": 316012084
+    },
+    "gtt_status": "active",
+    "unrealized_pnl": 76.0,
+    "last_ltp": 4.96
+  },
+  {
+    "timestamp": "2026-04-21T14:49:17.027672",
+    "signal": {
+      "raw_message": "OPTIONS BUY BRITANNIA 5800 CALL @ 99, SL  39 TGT 200",
+      "source": "whatsapp",
+      "channel_id": "120363402587466290@g.us",
+      "channel_name": "STOCK OPTION manasjaiswal.com",
+      "timestamp": "2026-04-21T14:49:15.947118",
+      "action": "BUY",
+      "symbol": "BRITANNIA",
+      "exchange": "NFO",
+      "asset_type": "options",
+      "strike": 5800.0,
+      "option_type": "CE",
+      "expiry": "",
+      "entry_price": 99.0,
+      "entry_range": null,
+      "targets": [
+        200.0
+      ],
+      "stop_loss": 39.0,
+      "signal_type": "momentum",
+      "cmp": 5818.5,
+      "confidence": 100,
+      "parse_notes": [],
+      "lot_size": 0
+    },
+    "status": "executed",
+    "order_id": "260421191481251",
+    "broker": "kite",
+    "message": "Order placed",
+    "adjusted_targets": [
+      159.6
+    ],
+    "quantity": 375,
+    "capital": 37125.0,
+    "gtt_id": {
+      "trigger_id": 316017512
+    },
+    "gtt_status": "active",
+    "unrealized_pnl": 4875.0,
+    "last_ltp": 112
   }
 ]
