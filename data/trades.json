@@ -1,185 +1,5 @@
 [
   {
-    "timestamp": "2026-04-08T12:58:47.591425",
-    "signal": {
-      "raw_message": "BTST- UPDATE: VERY BIG MOVE ON CARD\nBUY #IRFC110 CE @ 0.65_0.67\nTARGET- 2_3\nKEEP SL- 0.30",
-      "source": "telegram",
-      "channel_id": "-1001776878392",
-      "channel_name": "Way2Laabh",
-      "timestamp": "2026-04-08T12:58:43.634131",
-      "action": "BUY",
-      "symbol": "BTST-",
-      "exchange": "NSE",
-      "asset_type": "equity",
-      "strike": null,
-      "option_type": "",
-      "expiry": "",
-      "entry_price": 0.65,
-      "entry_range": null,
-      "targets": [
-        2.0
-      ],
-      "stop_loss": null,
-      "signal_type": "swing",
-      "cmp": null,
-      "confidence": 75,
-      "parse_notes": [
-        "No stop loss found"
-      ],
-      "lot_size": 0
-    },
-    "status": "paper_executed",
-    "order_id": "PAPER-1775633327",
-    "broker": "PAPER",
-    "message": "PAPER: BUY 38461x BTST- @ 0.65 | Adj Targets: [1.46] | SL: None",
-    "adjusted_targets": [
-      1.46
-    ],
-    "quantity": 38461,
-    "capital": 24999.65
-  },
-  {
-    "timestamp": "2026-04-08T12:58:49.326179",
-    "signal": {
-      "raw_message": "1-2 DAYS Technical call Buy GLENMARK above 2164.40 with SL 2130 Target 2235\u00a0(ANALYST SWATI).\u00a0\u00a0 Visit our website for disclosure (Nirmal Bang).\u00a0",
-      "source": "telegram",
-      "channel_id": "-1001156121763",
-      "channel_name": "Nirmal Bang Official",
-      "timestamp": "2026-04-08T12:58:48.358599",
-      "action": "BUY",
-      "symbol": "GLENMARK",
-      "exchange": "NSE",
-      "asset_type": "equity",
-      "strike": null,
-      "option_type": "",
-      "expiry": "",
-      "entry_price": 2164.4,
-      "entry_range": null,
-      "targets": [
-        2235.0
-      ],
-      "stop_loss": 2130.0,
-      "signal_type": "swing",
-      "cmp": 2166.0,
-      "confidence": 90,
-      "parse_notes": [],
-      "lot_size": 0
-    },
-    "status": "rejected",
-    "order_id": null,
-    "broker": null,
-    "message": "Channel limit reached (5/day) for Nirmal Bang Official",
-    "adjusted_targets": [],
-    "quantity": 0,
-    "capital": 0
-  },
-  {
-    "timestamp": "2026-04-08T13:18:42.315137",
-    "signal": {
-      "raw_message": "EXPIRY 16 APRIL SHORT STRANGLE CRUDE 8000 PE @ 178 SELL CRUDE 1000CE @ 250 TOTAL INFLOW 428 SL 680 ABV  TGT 180-40",
-      "source": "telegram",
-      "channel_id": "-1001156121763",
-      "channel_name": "Nirmal Bang Official",
-      "timestamp": "2026-04-08T13:18:38.193440",
-      "action": "SELL",
-      "symbol": "EXPIRY",
-      "exchange": "NFO",
-      "asset_type": "options",
-      "strike": 8000.0,
-      "option_type": "PE",
-      "expiry": "16 APR",
-      "entry_price": 178.0,
-      "entry_range": null,
-      "targets": [
-        80.0,
-        180.0
-      ],
-      "stop_loss": 680.0,
-      "signal_type": "intraday",
-      "cmp": null,
-      "confidence": 100,
-      "parse_notes": [],
-      "lot_size": 0
-    },
-    "status": "rejected",
-    "order_id": null,
-    "broker": null,
-    "message": "Channel limit reached (5/day) for Nirmal Bang Official",
-    "adjusted_targets": [],
-    "quantity": 0,
-    "capital": 0
-  },
-  {
-    "timestamp": "2026-04-08T13:40:32.924850",
-    "signal": {
-      "raw_message": "Intraday Derivatives Call Buy NIFTY\u00a013APR\u00a024000 CE above 215 with SL 175 Target 300\u00a0(ANALYST NIRAV) Visit our website for disclosure (Nirmal Bang)\u00a0",
-      "source": "telegram",
-      "channel_id": "-1001156121763",
-      "channel_name": "Nirmal Bang Official",
-      "timestamp": "2026-04-08T13:40:29.028304",
-      "action": "BUY",
-      "symbol": "NIFTY",
-      "exchange": "NFO",
-      "asset_type": "options",
-      "strike": 24000.0,
-      "option_type": "CE",
-      "expiry": "13 APR",
-      "entry_price": 215.0,
-      "entry_range": null,
-      "targets": [
-        300.0
-      ],
-      "stop_loss": 175.0,
-      "signal_type": "intraday",
-      "cmp": null,
-      "confidence": 100,
-      "parse_notes": [],
-      "lot_size": 0
-    },
-    "status": "rejected",
-    "order_id": null,
-    "broker": null,
-    "message": "Channel limit reached (5/day) for Nirmal Bang Official",
-    "adjusted_targets": [],
-    "quantity": 0,
-    "capital": 0
-  },
-  {
-    "timestamp": "2026-04-08T13:45:45.882855",
-    "signal": {
-      "raw_message": "1-2 DAYS Technical call Buy AETHER above 1135 with SL 1115, Target 1175(ANALYST AMIT).\u00a0Visit our website for disclosure. (Nirmal Bang).\u00a0",
-      "source": "telegram",
-      "channel_id": "-1001156121763",
-      "channel_name": "Nirmal Bang Official",
-      "timestamp": "2026-04-08T13:45:44.892792",
-      "action": "BUY",
-      "symbol": "AETHER",
-      "exchange": "NSE",
-      "asset_type": "equity",
-      "strike": null,
-      "option_type": "",
-      "expiry": "",
-      "entry_price": 1135.0,
-      "entry_range": null,
-      "targets": [
-        1175.0
-      ],
-      "stop_loss": 1115.0,
-      "signal_type": "swing",
-      "cmp": 1138.8,
-      "confidence": 90,
-      "parse_notes": [],
-      "lot_size": 0
-    },
-    "status": "rejected",
-    "order_id": null,
-    "broker": null,
-    "message": "Channel limit reached (5/day) for Nirmal Bang Official",
-    "adjusted_targets": [],
-    "quantity": 0,
-    "capital": 0
-  },
-  {
     "timestamp": "2026-04-08T13:47:45.934342",
     "signal": {
       "raw_message": "1-2 DAYS Derivatives call Buy SIEMENS 28APR 3200CE above 115 with SL 90, Target 160(ANALYST AMIT).\u00a0Visit our website for disclosure. (Nirmal Bang)",
@@ -2026,8 +1846,8 @@
     "adjusted_targets": [],
     "quantity": 500,
     "capital": 52500.0,
-    "unrealized_pnl": 27475.0,
-    "last_ltp": 159.95
+    "unrealized_pnl": 40300.0,
+    "last_ltp": 185.6
   },
   {
     "timestamp": "2026-04-10T12:44:24.943630",
@@ -3557,8 +3377,8 @@
     "adjusted_targets": [],
     "quantity": 19,
     "capital": 24365.6,
-    "unrealized_pnl": 782.8,
-    "last_ltp": 1323.6
+    "unrealized_pnl": 577.6,
+    "last_ltp": 1312.8
   },
   {
     "timestamp": "2026-04-15T09:31:39.518753",
@@ -4184,8 +4004,8 @@
     "adjusted_targets": [],
     "quantity": 1,
     "capital": 251500.0,
-    "unrealized_pnl": 251260.67,
-    "last_ltp": 239.33
+    "unrealized_pnl": 251262.4,
+    "last_ltp": 237.6
   },
   {
     "timestamp": "2026-04-15T14:40:59.270767",
@@ -4223,8 +4043,8 @@
     ],
     "quantity": 10,
     "capital": 24877.0,
-    "unrealized_pnl": 547.0,
-    "last_ltp": 2542.4
+    "unrealized_pnl": 59.0,
+    "last_ltp": 2493.6
   },
   {
     "timestamp": "2026-04-15T14:50:17.525409",
@@ -4758,8 +4578,8 @@
     ],
     "quantity": 82,
     "capital": 24903.4,
-    "unrealized_pnl": 131.2,
-    "last_ltp": 305.3
+    "unrealized_pnl": -172.2,
+    "last_ltp": 301.6
   },
   {
     "timestamp": "2026-04-16T11:26:37.538128",
@@ -4921,8 +4741,8 @@
     "adjusted_targets": [],
     "quantity": 500,
     "capital": 27250.0,
-    "unrealized_pnl": 57350.0,
-    "last_ltp": 169.2
+    "unrealized_pnl": 78700.0,
+    "last_ltp": 211.9
   },
   {
     "timestamp": "2026-04-16T14:52:11.019222",
@@ -5722,8 +5542,8 @@
     ],
     "quantity": 70,
     "capital": 24850.0,
-    "unrealized_pnl": 210.0,
-    "last_ltp": 358
+    "unrealized_pnl": -360.5,
+    "last_ltp": 349.85
   },
   {
     "timestamp": "2026-04-17T11:53:33.703271",
@@ -5931,8 +5751,8 @@
     ],
     "quantity": 281,
     "capital": 24994.95,
-    "unrealized_pnl": -460.84,
-    "last_ltp": 87.31
+    "unrealized_pnl": 95.54,
+    "last_ltp": 89.29
   },
   {
     "timestamp": "2026-04-17T13:50:09.794052",
@@ -6494,8 +6314,13 @@
       "trigger_id": 315831263
     },
     "gtt_status": "active",
-    "unrealized_pnl": -9185.0,
-    "last_ltp": 12.65
+    "unrealized_pnl": 0,
+    "last_ltp": 7.4,
+    "closed": true,
+    "exit_price": 7.4,
+    "exit_reason": "STOP_LOSS",
+    "pnl": -14960.0,
+    "exit_time": "2026-04-24T09:38:15.355123"
   },
   {
     "timestamp": "2026-04-21T09:46:28.005199",
@@ -6585,8 +6410,12 @@
       "trigger_id": 315940951
     },
     "gtt_status": "active",
-    "unrealized_pnl": 5125.0,
-    "last_ltp": 11.05
+    "unrealized_pnl": -13125.0,
+    "last_ltp": 3.75,
+    "closed": true,
+    "exit_price": 3.75,
+    "exit_reason": "STOP_LOSS",
+    "pnl": -13125.0
   },
   {
     "timestamp": "2026-04-21T10:34:08.689290",
@@ -7531,8 +7360,8 @@
       "trigger_id": 316306017
     },
     "gtt_status": "active",
-    "unrealized_pnl": -7500.0,
-    "last_ltp": 25
+    "unrealized_pnl": -10275.0,
+    "last_ltp": 19.45
   },
   {
     "timestamp": "2026-04-23T10:47:02.604526",
@@ -7621,8 +7450,12 @@
       "trigger_id": 316309277
     },
     "gtt_status": "active",
-    "unrealized_pnl": 2395.5,
-    "last_ltp": 594.85
+    "unrealized_pnl": 9267.0,
+    "last_ltp": 823.9,
+    "closed": true,
+    "exit_price": 823.9,
+    "exit_reason": "TARGET_HIT",
+    "pnl": 9267.0
   },
   {
     "timestamp": "2026-04-23T11:01:45.196414",
@@ -7664,8 +7497,13 @@
       "trigger_id": 316312051
     },
     "gtt_status": "active",
-    "unrealized_pnl": 3341.25,
-    "last_ltp": 14.35
+    "unrealized_pnl": 0,
+    "last_ltp": 16.65,
+    "closed": true,
+    "exit_price": 16.65,
+    "exit_reason": "TARGET_HIT",
+    "pnl": 5238.75,
+    "exit_time": "2026-04-24T09:37:55.357283"
   },
   {
     "timestamp": "2026-04-23T11:02:44.523570",
@@ -7746,8 +7584,12 @@
       "trigger_id": 316312738
     },
     "gtt_status": "active",
-    "unrealized_pnl": 967.5,
-    "last_ltp": 19.7
+    "unrealized_pnl": 4837.5,
+    "last_ltp": 28.3,
+    "closed": true,
+    "exit_price": 28.3,
+    "exit_reason": "TARGET_HIT",
+    "pnl": 4837.5
   },
   {
     "timestamp": "2026-04-23T11:05:06.335345",
@@ -7789,8 +7631,12 @@
       "trigger_id": 316313077
     },
     "gtt_status": "active",
-    "unrealized_pnl": 2152.5,
-    "last_ltp": 32.15
+    "unrealized_pnl": 5495.0,
+    "last_ltp": 41.7,
+    "closed": true,
+    "exit_price": 41.7,
+    "exit_reason": "TARGET_HIT",
+    "pnl": 5495.0
   },
   {
     "timestamp": "2026-04-23T11:16:30.331789",
@@ -7832,8 +7678,8 @@
       "trigger_id": 316316659
     },
     "gtt_status": "active",
-    "unrealized_pnl": 406.25,
-    "last_ltp": 15.75
+    "unrealized_pnl": -2500.0,
+    "last_ltp": 11.1
   },
   {
     "timestamp": "2026-04-23T11:26:48.626792",
@@ -7914,8 +7760,8 @@
       "trigger_id": 316320939
     },
     "gtt_status": "active",
-    "unrealized_pnl": -522.5,
-    "last_ltp": 8.25
+    "unrealized_pnl": -1852.5,
+    "last_ltp": 6.85
   },
   {
     "timestamp": "2026-04-23T12:33:59.900223",
@@ -7957,8 +7803,8 @@
       "trigger_id": 316339554
     },
     "gtt_status": "active",
-    "unrealized_pnl": 1650.0,
-    "last_ltp": 2.78
+    "unrealized_pnl": -1200.0,
+    "last_ltp": 2.21
   },
   {
     "timestamp": "2026-04-23T12:34:12.176142",
@@ -8140,7 +7986,14 @@
     "gtt_id": {
       "trigger_id": 316377473
     },
-    "gtt_status": "active"
+    "gtt_status": "active",
+    "closed": true,
+    "exit_price": 308.1,
+    "exit_reason": "TARGET_HIT",
+    "pnl": 8326.5,
+    "exit_time": "2026-04-24T11:57:35.957515",
+    "last_ltp": 308.1,
+    "unrealized_pnl": 0
   },
   {
     "timestamp": "2026-04-23T14:36:38.575284",
@@ -8176,5 +8029,516 @@
     "adjusted_targets": [],
     "quantity": 0,
     "capital": 0
+  },
+  {
+    "timestamp": "2026-04-24T09:13:29.679217",
+    "signal": {
+      "raw_message": "\ud83d\udcca 3 Things That Will Decide the Market Today\n\n\ud83d\udd34 GIFT NIFTY (Gift City Cues)\nGift Nifty up ~70 pts (+0.3%), indicating a mildly positive start.\nSentiment remains range-bound as crude above $105/bbl caps upside despite global stability.\n\n\ud83c\udf0d Macro / Global Cues \nUS markets -0.5% from highs; US futures +0.5%. Asia mixed, down ~0.5%. Europe -0.5%. Brent crude above $105/bbl (1-month high), gold -2% below $4700/oz, silver -3%. FIIs sold \u20b93254cr, DIIs bought \u20b9941cr. Domestic sentiment mixed-positive PMI (58.3) vs pressure from high crude and weak IT guidance.\n\n\ud83d\udcc8 Options Data & Key Levels\nOption data suggests a broader trading range between 23,700 to 24,600 zones while an immediate range between 23,900 and 24,400 levels.\n\nMotilal Oswal's Daily Fundamental & Technical picks\ud83d\udc49\n\nFundamental Picks (for more than a year)\n1.Bharat Dynamics - Target 1800 (26%)\n2.Delhivery- Target 580 (29%)\n3.MTAR Technologies- Target 4810 (12%)\n4.State Bank of India- Target 1300 (19%)\n5. TVS Motor- Target 4461 (27%)\n\nTechnical Pick -\nGLENMARK BUY\nPrevious Close : 2340\nTarget : 2500\nPotential upside : ~7%",
+      "source": "whatsapp",
+      "channel_id": "120363422671480756@g.us",
+      "channel_name": "Trade And Investment With MO",
+      "timestamp": "2026-04-24T09:13:25.103988",
+      "action": "BUY",
+      "symbol": "BANKINDIA",
+      "exchange": "NFO",
+      "asset_type": "futures",
+      "strike": null,
+      "option_type": "",
+      "expiry": "",
+      "entry_price": 24150.0,
+      "entry_range": [
+        23700.0,
+        24600.0
+      ],
+      "targets": [],
+      "stop_loss": null,
+      "signal_type": "intraday",
+      "cmp": null,
+      "confidence": 60,
+      "parse_notes": [
+        "No valid targets found",
+        "No stop loss found"
+      ],
+      "lot_size": 0
+    },
+    "status": "failed",
+    "order_id": null,
+    "broker": "mstock",
+    "message": "Invalid order type. valid product types allowed are MARKET, SL-M, SL and LIMIT.",
+    "adjusted_targets": [],
+    "quantity": 1,
+    "capital": 24150.0
+  },
+  {
+    "timestamp": "2026-04-24T11:31:44.152969",
+    "signal": {
+      "raw_message": "",
+      "source": "",
+      "channel_id": "test",
+      "channel_name": "STOCK OPTION manasjaiswal.com",
+      "timestamp": "",
+      "action": "BUY",
+      "symbol": "DMART",
+      "exchange": "NFO",
+      "asset_type": "options",
+      "strike": 4400,
+      "option_type": "PE",
+      "expiry": "26TH MAY",
+      "entry_price": 148.0,
+      "entry_range": null,
+      "targets": [
+        235.0
+      ],
+      "stop_loss": 104.0,
+      "signal_type": "",
+      "cmp": null,
+      "confidence": 0,
+      "parse_notes": [],
+      "lot_size": 0
+    },
+    "status": "executed",
+    "order_id": "260424190659739",
+    "broker": "kite",
+    "message": "Order placed",
+    "adjusted_targets": [
+      200.2
+    ],
+    "quantity": 150,
+    "capital": 22200.0,
+    "gtt_id": null,
+    "gtt_status": "error",
+    "unrealized_pnl": -18495.0,
+    "last_ltp": 24.7,
+    "closed": true,
+    "exit_price": 24.7,
+    "exit_reason": "STOP_LOSS",
+    "pnl": -18495.0
+  },
+  {
+    "timestamp": "2026-04-24T11:57:00.394943",
+    "signal": {
+      "raw_message": "OPTIONS BUY ABCAPITAL 340 PUT @ 14.35, SL 9.90 TGT 25",
+      "source": "whatsapp",
+      "channel_id": "120363402587466290@g.us",
+      "channel_name": "STOCK OPTION manasjaiswal.com",
+      "timestamp": "2026-04-24T11:56:59.529526",
+      "action": "BUY",
+      "symbol": "ABCAPITAL",
+      "exchange": "NFO",
+      "asset_type": "options",
+      "strike": 340.0,
+      "option_type": "PE",
+      "expiry": "",
+      "entry_price": 14.35,
+      "entry_range": null,
+      "targets": [
+        25.0
+      ],
+      "stop_loss": 9.9,
+      "signal_type": "momentum",
+      "cmp": null,
+      "confidence": 100,
+      "parse_notes": [],
+      "lot_size": 0
+    },
+    "status": "executed",
+    "order_id": "2047562975425896448",
+    "broker": "kite2",
+    "message": "Order placed via kite2 relay",
+    "adjusted_targets": [
+      20.74
+    ],
+    "quantity": 3100,
+    "capital": 44485.0,
+    "closed": true,
+    "exit_price": 4.9,
+    "exit_reason": "STOP_LOSS",
+    "pnl": -29295.0,
+    "exit_time": "2026-04-24T11:57:41.065631",
+    "last_ltp": 4.9,
+    "unrealized_pnl": 0
+  },
+  {
+    "timestamp": "2026-04-24T11:57:00.394347",
+    "signal": {
+      "raw_message": "OPTIONS BUY ABCAPITAL 340 PUT @ 14.35, SL 9.90 TGT 25",
+      "source": "whatsapp",
+      "channel_id": "120363402587466290@g.us",
+      "channel_name": "STOCK OPTION manasjaiswal.com",
+      "timestamp": "2026-04-24T11:56:59.529526",
+      "action": "BUY",
+      "symbol": "ABCAPITAL",
+      "exchange": "NFO",
+      "asset_type": "options",
+      "strike": 340.0,
+      "option_type": "PE",
+      "expiry": "",
+      "entry_price": 14.35,
+      "entry_range": null,
+      "targets": [
+        25.0
+      ],
+      "stop_loss": 9.9,
+      "signal_type": "momentum",
+      "cmp": null,
+      "confidence": 100,
+      "parse_notes": [],
+      "lot_size": 0
+    },
+    "status": "executed",
+    "order_id": "260424190724899",
+    "broker": "kite",
+    "message": "Order placed",
+    "adjusted_targets": [
+      20.74
+    ],
+    "quantity": 3100,
+    "capital": 44485.0,
+    "gtt_id": null,
+    "gtt_status": "error",
+    "closed": true,
+    "exit_price": 4.9,
+    "exit_reason": "STOP_LOSS",
+    "pnl": -29295.0,
+    "exit_time": "2026-04-24T11:57:41.123170",
+    "last_ltp": 4.9,
+    "unrealized_pnl": 0
+  },
+  {
+    "timestamp": "2026-04-24T12:01:28.549608",
+    "signal": {
+      "raw_message": "OPTIONS BUY BSE MAY 3400 PUT @ 154, SL 124 TGT 200",
+      "source": "whatsapp",
+      "channel_id": "120363402587466290@g.us",
+      "channel_name": "STOCK OPTION manasjaiswal.com",
+      "timestamp": "2026-04-24T12:01:27.727840",
+      "action": "BUY",
+      "symbol": "",
+      "exchange": "NFO",
+      "asset_type": "options",
+      "strike": 3400.0,
+      "option_type": "PE",
+      "expiry": "",
+      "entry_price": 154.0,
+      "entry_range": null,
+      "targets": [
+        200.0
+      ],
+      "stop_loss": 124.0,
+      "signal_type": "intraday",
+      "cmp": null,
+      "confidence": 75,
+      "parse_notes": [
+        "Could not identify symbol"
+      ],
+      "lot_size": 0
+    },
+    "status": "rejected",
+    "order_id": null,
+    "broker": null,
+    "message": "Incomplete signal (missing action/symbol/price)",
+    "adjusted_targets": [],
+    "quantity": 0,
+    "capital": 0
+  },
+  {
+    "timestamp": "2026-04-24T12:01:28.549830",
+    "signal": {
+      "raw_message": "OPTIONS BUY BSE MAY 3400 PUT @ 154, SL 124 TGT 200",
+      "source": "whatsapp",
+      "channel_id": "120363402587466290@g.us",
+      "channel_name": "STOCK OPTION manasjaiswal.com",
+      "timestamp": "2026-04-24T12:01:27.727840",
+      "action": "BUY",
+      "symbol": "",
+      "exchange": "NFO",
+      "asset_type": "options",
+      "strike": 3400.0,
+      "option_type": "PE",
+      "expiry": "",
+      "entry_price": 154.0,
+      "entry_range": null,
+      "targets": [
+        200.0
+      ],
+      "stop_loss": 124.0,
+      "signal_type": "intraday",
+      "cmp": null,
+      "confidence": 75,
+      "parse_notes": [
+        "Could not identify symbol"
+      ],
+      "lot_size": 0
+    },
+    "status": "rejected",
+    "order_id": null,
+    "broker": null,
+    "message": "Incomplete signal (missing action/symbol/price)",
+    "adjusted_targets": [],
+    "quantity": 0,
+    "capital": 0
+  },
+  {
+    "timestamp": "2026-04-24T13:34:16.884723",
+    "signal": {
+      "raw_message": "OPTIONS BUY FEDERAL BANK 290 PUT @ 9.05, SL 6.90 TGT 15",
+      "source": "whatsapp",
+      "channel_id": "120363402587466290@g.us",
+      "channel_name": "STOCK OPTION manasjaiswal.com",
+      "timestamp": "2026-04-24T13:34:15.971655",
+      "action": "BUY",
+      "symbol": "FEDERALBNK",
+      "exchange": "NFO",
+      "asset_type": "options",
+      "strike": 290.0,
+      "option_type": "PE",
+      "expiry": "",
+      "entry_price": 9.05,
+      "entry_range": null,
+      "targets": [
+        15.0
+      ],
+      "stop_loss": 6.9,
+      "signal_type": "momentum",
+      "cmp": null,
+      "confidence": 100,
+      "parse_notes": [],
+      "lot_size": 0
+    },
+    "status": "executed",
+    "order_id": "260424190957931",
+    "broker": "kite",
+    "message": "Order placed",
+    "adjusted_targets": [
+      12.62
+    ],
+    "quantity": 5000,
+    "capital": 45250.0,
+    "gtt_id": null,
+    "gtt_status": "error",
+    "closed": true,
+    "exit_price": 2.0,
+    "exit_reason": "STOP_LOSS",
+    "pnl": -35250.0,
+    "exit_time": "2026-04-24T13:34:38.971397",
+    "last_ltp": 2.0,
+    "unrealized_pnl": 0
+  },
+  {
+    "timestamp": "2026-04-24T13:34:16.899920",
+    "signal": {
+      "raw_message": "OPTIONS BUY FEDERAL BANK 290 PUT @ 9.05, SL 6.90 TGT 15",
+      "source": "whatsapp",
+      "channel_id": "120363402587466290@g.us",
+      "channel_name": "STOCK OPTION manasjaiswal.com",
+      "timestamp": "2026-04-24T13:34:15.971655",
+      "action": "BUY",
+      "symbol": "FEDERALBNK",
+      "exchange": "NFO",
+      "asset_type": "options",
+      "strike": 290.0,
+      "option_type": "PE",
+      "expiry": "",
+      "entry_price": 9.05,
+      "entry_range": null,
+      "targets": [
+        15.0
+      ],
+      "stop_loss": 6.9,
+      "signal_type": "momentum",
+      "cmp": null,
+      "confidence": 100,
+      "parse_notes": [],
+      "lot_size": 0
+    },
+    "status": "executed",
+    "order_id": "2047587417023619072",
+    "broker": "kite2",
+    "message": "Order placed via kite2 relay",
+    "adjusted_targets": [
+      12.62
+    ],
+    "quantity": 5000,
+    "capital": 45250.0,
+    "closed": true,
+    "exit_price": 2.0,
+    "exit_reason": "STOP_LOSS",
+    "pnl": -35250.0,
+    "exit_time": "2026-04-24T13:34:40.022604",
+    "last_ltp": 2.0,
+    "unrealized_pnl": 0
+  },
+  {
+    "timestamp": "2026-04-24T13:38:54.145198",
+    "signal": {
+      "raw_message": "OPTIONS BUY IEX MAY 125 PUT @ 7.70, SL 5.30 TGT 12",
+      "source": "whatsapp",
+      "channel_id": "120363402587466290@g.us",
+      "channel_name": "STOCK OPTION manasjaiswal.com",
+      "timestamp": "2026-04-24T13:38:53.325826",
+      "action": "BUY",
+      "symbol": "IEX",
+      "exchange": "NFO",
+      "asset_type": "options",
+      "strike": 125.0,
+      "option_type": "PE",
+      "expiry": "",
+      "entry_price": 7.7,
+      "entry_range": null,
+      "targets": [
+        12.0
+      ],
+      "stop_loss": 5.3,
+      "signal_type": "momentum",
+      "cmp": null,
+      "confidence": 100,
+      "parse_notes": [],
+      "lot_size": 0
+    },
+    "status": "executed",
+    "order_id": "2047588578795495424",
+    "broker": "kite2",
+    "message": "Order placed via kite2 relay",
+    "adjusted_targets": [
+      10.28
+    ],
+    "quantity": 3750,
+    "capital": 28875.0,
+    "closed": true,
+    "exit_price": 3.4,
+    "exit_reason": "STOP_LOSS",
+    "pnl": -16125.0,
+    "exit_time": "2026-04-24T13:39:08.813028",
+    "last_ltp": 3.4,
+    "unrealized_pnl": 0
+  },
+  {
+    "timestamp": "2026-04-24T13:38:54.142326",
+    "signal": {
+      "raw_message": "OPTIONS BUY IEX MAY 125 PUT @ 7.70, SL 5.30 TGT 12",
+      "source": "whatsapp",
+      "channel_id": "120363402587466290@g.us",
+      "channel_name": "STOCK OPTION manasjaiswal.com",
+      "timestamp": "2026-04-24T13:38:53.325826",
+      "action": "BUY",
+      "symbol": "IEX",
+      "exchange": "NFO",
+      "asset_type": "options",
+      "strike": 125.0,
+      "option_type": "PE",
+      "expiry": "",
+      "entry_price": 7.7,
+      "entry_range": null,
+      "targets": [
+        12.0
+      ],
+      "stop_loss": 5.3,
+      "signal_type": "momentum",
+      "cmp": null,
+      "confidence": 100,
+      "parse_notes": [],
+      "lot_size": 0
+    },
+    "status": "executed",
+    "order_id": "260424190969838",
+    "broker": "kite",
+    "message": "Order placed",
+    "adjusted_targets": [
+      10.28
+    ],
+    "quantity": 3750,
+    "capital": 28875.0,
+    "gtt_id": null,
+    "gtt_status": "error",
+    "closed": true,
+    "exit_price": 3.4,
+    "exit_reason": "STOP_LOSS",
+    "pnl": -16125.0,
+    "exit_time": "2026-04-24T13:39:08.941251",
+    "last_ltp": 3.4,
+    "unrealized_pnl": 0
+  },
+  {
+    "timestamp": "2026-04-24T13:40:33.453798",
+    "signal": {
+      "raw_message": "BANKNIFTY OPTIONS BUY BANKNIFTY 26TH MAY 56000 PUT @ 1270, SL 874 TGT 2000",
+      "source": "whatsapp",
+      "channel_id": "120363421243753089@g.us",
+      "channel_name": "BANKNIFTY manasjaiswal.com",
+      "timestamp": "2026-04-24T13:40:32.593366",
+      "action": "BUY",
+      "symbol": "BANKNIFTY",
+      "exchange": "NFO",
+      "asset_type": "options",
+      "strike": 56000.0,
+      "option_type": "PE",
+      "expiry": "",
+      "entry_price": 1270.0,
+      "entry_range": null,
+      "targets": [
+        2000.0
+      ],
+      "stop_loss": 874.0,
+      "signal_type": "momentum",
+      "cmp": null,
+      "confidence": 100,
+      "parse_notes": [],
+      "lot_size": 0
+    },
+    "status": "executed",
+    "order_id": "260424190976033",
+    "broker": "kite",
+    "message": "Order placed",
+    "adjusted_targets": [
+      1708.0
+    ],
+    "quantity": 30,
+    "capital": 38100.0,
+    "gtt_id": null,
+    "gtt_status": "error",
+    "closed": true,
+    "exit_price": 523.6,
+    "exit_reason": "STOP_LOSS",
+    "pnl": -22392.0,
+    "exit_time": "2026-04-24T13:40:39.062266",
+    "last_ltp": 523.6,
+    "unrealized_pnl": 0
+  },
+  {
+    "timestamp": "2026-04-24T13:40:33.453951",
+    "signal": {
+      "raw_message": "BANKNIFTY OPTIONS BUY BANKNIFTY 26TH MAY 56000 PUT @ 1270, SL 874 TGT 2000",
+      "source": "whatsapp",
+      "channel_id": "120363421243753089@g.us",
+      "channel_name": "BANKNIFTY manasjaiswal.com",
+      "timestamp": "2026-04-24T13:40:32.593366",
+      "action": "BUY",
+      "symbol": "BANKNIFTY",
+      "exchange": "NFO",
+      "asset_type": "options",
+      "strike": 56000.0,
+      "option_type": "PE",
+      "expiry": "",
+      "entry_price": 1270.0,
+      "entry_range": null,
+      "targets": [
+        2000.0
+      ],
+      "stop_loss": 874.0,
+      "signal_type": "momentum",
+      "cmp": null,
+      "confidence": 100,
+      "parse_notes": [],
+      "lot_size": 0
+    },
+    "status": "failed",
+    "order_id": null,
+    "broker": "kite2",
+    "message": "LIMIT orders that are far away from the LTP are restricted as per exchange guidelines. Please use [GTT](https://support.zerodha.com/category/trading-and-markets/gtt/articles/what-is-the-good-till-triggered-gtt-feature) for placing such orders. [Read more.](https://support.zerodha.com/category/trading-and-markets/margin-leverage-and-product-and-order-types/articles/limit-orders-far-away-from-ltp-are-rejected)",
+    "adjusted_targets": [
+      1708.0
+    ],
+    "quantity": 30,
+    "capital": 38100.0
   }
 ]
