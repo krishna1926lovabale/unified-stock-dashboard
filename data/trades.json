@@ -1,503 +1,5 @@
 [
   {
-    "timestamp": "2026-04-08T13:47:45.934342",
-    "signal": {
-      "raw_message": "1-2 DAYS Derivatives call Buy SIEMENS 28APR 3200CE above 115 with SL 90, Target 160(ANALYST AMIT).\u00a0Visit our website for disclosure. (Nirmal Bang)",
-      "source": "telegram",
-      "channel_id": "-1001156121763",
-      "channel_name": "Nirmal Bang Official",
-      "timestamp": "2026-04-08T13:47:44.941948",
-      "action": "BUY",
-      "symbol": "SIEMENS",
-      "exchange": "NFO",
-      "asset_type": "options",
-      "strike": 3200.0,
-      "option_type": "CE",
-      "expiry": "28 APR",
-      "entry_price": 115.0,
-      "entry_range": null,
-      "targets": [
-        160.0
-      ],
-      "stop_loss": 90.0,
-      "signal_type": "swing",
-      "cmp": 3200.2,
-      "confidence": 100,
-      "parse_notes": [],
-      "lot_size": 0
-    },
-    "status": "rejected",
-    "order_id": null,
-    "broker": null,
-    "message": "Channel limit reached (5/day) for Nirmal Bang Official",
-    "adjusted_targets": [],
-    "quantity": 0,
-    "capital": 0
-  },
-  {
-    "timestamp": "2026-04-08T15:10:25.269035",
-    "signal": {
-      "raw_message": "EXPIRY 30 APRIL SHORT STRANGLE GOLD 140000 PE @ 905 SELL GOLD 160000 CE @ 2175 TOTAL INFLOW 3080 SL 4680 ABV  TGT 1000-400",
-      "source": "telegram",
-      "channel_id": "-1001156121763",
-      "channel_name": "Nirmal Bang Official",
-      "timestamp": "2026-04-08T15:10:21.064085",
-      "action": "SELL",
-      "symbol": "EXPIRY",
-      "exchange": "NFO",
-      "asset_type": "options",
-      "strike": 140000.0,
-      "option_type": "PE",
-      "expiry": "30 APR",
-      "entry_price": 905.0,
-      "entry_range": null,
-      "targets": [],
-      "stop_loss": 4680.0,
-      "signal_type": "intraday",
-      "cmp": null,
-      "confidence": 85,
-      "parse_notes": [
-        "No valid targets found"
-      ],
-      "lot_size": 0
-    },
-    "status": "rejected",
-    "order_id": null,
-    "broker": null,
-    "message": "Channel limit reached (5/day) for Nirmal Bang Official",
-    "adjusted_targets": [],
-    "quantity": 0,
-    "capital": 0
-  },
-  {
-    "timestamp": "2026-04-09T09:29:20.292021",
-    "signal": {
-      "raw_message": "SELL ZINC AT 328.50-328.80 SL ABOVE 331 TARGET 325",
-      "source": "telegram",
-      "channel_id": "-1001156121763",
-      "channel_name": "Nirmal Bang Official",
-      "timestamp": "2026-04-09T09:29:16.182618",
-      "action": "SELL",
-      "symbol": "ZINC",
-      "exchange": "NSE",
-      "asset_type": "equity",
-      "strike": null,
-      "option_type": "",
-      "expiry": "",
-      "entry_price": 328.65,
-      "entry_range": [
-        328.5,
-        328.8
-      ],
-      "targets": [
-        25.0,
-        28.5,
-        325.0
-      ],
-      "stop_loss": 331.0,
-      "signal_type": "intraday",
-      "cmp": null,
-      "confidence": 90,
-      "parse_notes": [],
-      "lot_size": 0
-    },
-    "status": "paper_executed",
-    "order_id": "PAPER-1775707160",
-    "broker": "PAPER",
-    "message": "PAPER: SELL 76x ZINC @ 328.65 | Adj Targets: [146.46, 148.56, 326.46] | SL: 331.0",
-    "adjusted_targets": [
-      146.46,
-      148.56,
-      326.46
-    ],
-    "quantity": 76,
-    "capital": 24977.4
-  },
-  {
-    "timestamp": "2026-04-09T09:30:26.284326",
-    "signal": {
-      "raw_message": "1-2 Days Technical Call Book Partial profits in BHEL at 269.4-270, Target 275, BUY Call initiated at 265.4\u00a0(ANALYST YADNESH).\u00a0Visit our website for disclosure. (Nirmal Bang).",
-      "source": "telegram",
-      "channel_id": "-1001156121763",
-      "channel_name": "Nirmal Bang Official",
-      "timestamp": "2026-04-09T09:30:25.311607",
-      "action": "BUY",
-      "symbol": "BHEL",
-      "exchange": "NSE",
-      "asset_type": "equity",
-      "strike": null,
-      "option_type": "",
-      "expiry": "",
-      "entry_price": 269.4,
-      "entry_range": null,
-      "targets": [
-        275.0
-      ],
-      "stop_loss": null,
-      "signal_type": "swing",
-      "cmp": 274.34,
-      "confidence": 75,
-      "parse_notes": [
-        "No stop loss found"
-      ],
-      "lot_size": 0
-    },
-    "status": "paper_executed",
-    "order_id": "PAPER-1775707226",
-    "broker": "PAPER",
-    "message": "PAPER: BUY 92x BHEL @ 269.4 | Adj Targets: [272.76] | SL: None",
-    "adjusted_targets": [
-      272.76
-    ],
-    "quantity": 92,
-    "capital": 24784.8,
-    "unrealized_pnl": 754.4,
-    "last_ltp": 277.6,
-    "closed": true,
-    "exit_price": 277.6,
-    "exit_reason": "TARGET_HIT",
-    "pnl": 754.4
-  },
-  {
-    "timestamp": "2026-04-09T09:33:59.288410",
-    "signal": {
-      "raw_message": "1-2 Days Technical Call Book Partial profits in CGPOWER at 735-738, Target 750, BUY Call initiated at 724\u00a0(ANALYST YADNESH).\u00a0Visit our website for disclosure. (Nirmal Bang).",
-      "source": "telegram",
-      "channel_id": "-1001156121763",
-      "channel_name": "Nirmal Bang Official",
-      "timestamp": "2026-04-09T09:33:58.154397",
-      "action": "BUY",
-      "symbol": "CGPOWER",
-      "exchange": "NSE",
-      "asset_type": "equity",
-      "strike": null,
-      "option_type": "",
-      "expiry": "",
-      "entry_price": 735.0,
-      "entry_range": null,
-      "targets": [
-        750.0
-      ],
-      "stop_loss": null,
-      "signal_type": "swing",
-      "cmp": 731.85,
-      "confidence": 75,
-      "parse_notes": [
-        "No stop loss found"
-      ],
-      "lot_size": 0
-    },
-    "status": "paper_executed",
-    "order_id": "PAPER-1775707439",
-    "broker": "PAPER",
-    "message": "PAPER: BUY 34x CGPOWER @ 735.0 | Adj Targets: [744.0] | SL: None",
-    "adjusted_targets": [
-      744.0
-    ],
-    "quantity": 34,
-    "capital": 24990.0,
-    "unrealized_pnl": 306.0,
-    "last_ltp": 744,
-    "closed": true,
-    "exit_price": 744,
-    "exit_reason": "TARGET_HIT",
-    "pnl": 306.0
-  },
-  {
-    "timestamp": "2026-04-09T09:45:22.262270",
-    "signal": {
-      "raw_message": "CASH INTRADAY\n\nBUY BAJAJ-AUTO @ 9501 SL 9430 TGT 9596,9640\n\nhttps://bit.ly/DisclaimerKSLResearch",
-      "source": "telegram",
-      "channel_id": "-1001450902049",
-      "channel_name": "Kotak Neo",
-      "timestamp": "2026-04-09T09:45:21.225964",
-      "action": "BUY",
-      "symbol": "BAJAJ-AUTO",
-      "exchange": "NSE",
-      "asset_type": "equity",
-      "strike": null,
-      "option_type": "",
-      "expiry": "",
-      "entry_price": 9501.0,
-      "entry_range": null,
-      "targets": [
-        9596.0,
-        9640.0
-      ],
-      "stop_loss": 9430.0,
-      "signal_type": "intraday",
-      "cmp": 9502.0,
-      "confidence": 90,
-      "parse_notes": [],
-      "lot_size": 0
-    },
-    "status": "paper_executed",
-    "order_id": "PAPER-1775708122",
-    "broker": "PAPER",
-    "message": "PAPER: BUY 2x BAJAJ-AUTO @ 9501.0 | Adj Targets: [9558.0, 9584.4] | SL: 9430.0",
-    "adjusted_targets": [
-      9558.0,
-      9584.4
-    ],
-    "quantity": 2,
-    "capital": 19002.0,
-    "unrealized_pnl": 114.0,
-    "last_ltp": 9558,
-    "closed": true,
-    "exit_price": 9558,
-    "exit_reason": "TARGET_HIT",
-    "pnl": 114.0
-  },
-  {
-    "timestamp": "2026-04-09T10:09:29.939667",
-    "signal": {
-      "raw_message": "1-2 DAYS Technical call Buy CIPLA above 1227.20with SL 1210 Target 1270\u00a0(ANALYST SWATI).\u00a0\u00a0 Visit our website for disclosure (Nirmal Bang).",
-      "source": "telegram",
-      "channel_id": "-1001156121763",
-      "channel_name": "Nirmal Bang Official",
-      "timestamp": "2026-04-09T10:09:28.728730",
-      "action": "BUY",
-      "symbol": "CIPLA",
-      "exchange": "NSE",
-      "asset_type": "equity",
-      "strike": null,
-      "option_type": "",
-      "expiry": "",
-      "entry_price": 1227.2,
-      "entry_range": null,
-      "targets": [
-        1270.0
-      ],
-      "stop_loss": 1210.0,
-      "signal_type": "swing",
-      "cmp": 1229.5,
-      "confidence": 90,
-      "parse_notes": [],
-      "lot_size": 0
-    },
-    "status": "paper_executed",
-    "order_id": "PAPER-1775709569",
-    "broker": "PAPER",
-    "message": "PAPER: BUY 20x CIPLA @ 1227.2 | Adj Targets: [1252.88] | SL: 1210.0",
-    "adjusted_targets": [
-      1252.88
-    ],
-    "quantity": 20,
-    "capital": 24544.0,
-    "unrealized_pnl": -470.0,
-    "last_ltp": 1203.7,
-    "closed": true,
-    "exit_price": 1203.7,
-    "exit_reason": "STOP_LOSS",
-    "pnl": -470.0
-  },
-  {
-    "timestamp": "2026-04-09T10:37:39.821479",
-    "signal": {
-      "raw_message": "1-2 DAYS Technical call Buy NATIONALUM above 412.5 with SL 397, Target 436(ANALYST AMIT).\u00a0Visit our website for disclosure. (Nirmal Bang)",
-      "source": "telegram",
-      "channel_id": "-1001156121763",
-      "channel_name": "Bulls Channel / Way2Laabh",
-      "timestamp": "2026-04-09T10:37:38.691065",
-      "action": "BUY",
-      "symbol": "NATIONALUM",
-      "exchange": "NSE",
-      "asset_type": "equity",
-      "strike": null,
-      "option_type": "",
-      "expiry": "",
-      "entry_price": 412.5,
-      "entry_range": null,
-      "targets": [
-        436.0
-      ],
-      "stop_loss": 397.0,
-      "signal_type": "swing",
-      "cmp": 413.3,
-      "confidence": 90,
-      "parse_notes": [],
-      "lot_size": 0
-    },
-    "status": "paper_executed",
-    "order_id": "PAPER-1775711259",
-    "broker": "PAPER",
-    "message": "PAPER: BUY 60x NATIONALUM @ 412.5 | Adj Targets: [426.6] | SL: 397.0",
-    "adjusted_targets": [
-      426.6
-    ],
-    "quantity": 60,
-    "capital": 24750.0,
-    "unrealized_pnl": 915.0,
-    "last_ltp": 427.75,
-    "closed": true,
-    "exit_price": 427.75,
-    "exit_reason": "TARGET_HIT",
-    "pnl": 915.0
-  },
-  {
-    "timestamp": "2026-04-09T10:40:16.562655",
-    "signal": {
-      "raw_message": "SENSEX SHORT STRANGLE STRATGEY 77100CE & 76400PE BOOK PROFITS @255, SELL INITIATED AT 300(ANALYST AMIT).\u00a0Visit our website for disclosure. (Nirmal Bang).\u00a0",
-      "source": "telegram",
-      "channel_id": "-1001156121763",
-      "channel_name": "Bulls Channel / Way2Laabh",
-      "timestamp": "2026-04-09T10:40:12.495435",
-      "action": "SELL",
-      "symbol": "SENSEX",
-      "exchange": "NFO",
-      "asset_type": "options",
-      "strike": 77100.0,
-      "option_type": "CE",
-      "expiry": "",
-      "entry_price": 255.0,
-      "entry_range": null,
-      "targets": [],
-      "stop_loss": null,
-      "signal_type": "intraday",
-      "cmp": null,
-      "confidence": 70,
-      "parse_notes": [
-        "No valid targets found",
-        "No stop loss found"
-      ],
-      "lot_size": 0
-    },
-    "status": "paper_executed",
-    "order_id": "PAPER-1775711416",
-    "broker": "PAPER",
-    "message": "PAPER: SELL 90x SENSEX @ 255.0 | Adj Targets: [] | SL: None",
-    "adjusted_targets": [],
-    "quantity": 90,
-    "capital": 22950.0,
-    "unrealized_pnl": 0,
-    "last_ltp": 0
-  },
-  {
-    "timestamp": "2026-04-09T10:41:55.498037",
-    "signal": {
-      "raw_message": "BUY NTPC 380 CE \nABOVE 9\nSL 7.50\n\nTGT 10.50",
-      "source": "whatsapp",
-      "channel_id": "120363422671480756@g.us",
-      "channel_name": "Trade And Investment With MO",
-      "timestamp": "2026-04-09T10:41:54.544090",
-      "action": "BUY",
-      "symbol": "NTPC",
-      "exchange": "NSE",
-      "asset_type": "equity",
-      "strike": null,
-      "option_type": "",
-      "expiry": "",
-      "entry_price": 9.0,
-      "entry_range": null,
-      "targets": [
-        10.5
-      ],
-      "stop_loss": 7.5,
-      "signal_type": "momentum",
-      "cmp": 381.35,
-      "confidence": 90,
-      "parse_notes": [],
-      "lot_size": 0
-    },
-    "status": "paper_executed",
-    "order_id": "PAPER-1775711515",
-    "broker": "PAPER",
-    "message": "PAPER: BUY 2777x NTPC @ 9.0 | Adj Targets: [9.9] | SL: 7.5",
-    "adjusted_targets": [
-      9.9
-    ],
-    "quantity": 2777,
-    "capital": 24993.0,
-    "unrealized_pnl": 1026518.05,
-    "last_ltp": 378.65,
-    "closed": true,
-    "exit_price": 378.65,
-    "exit_reason": "TARGET_HIT",
-    "pnl": 1026518.05
-  },
-  {
-    "timestamp": "2026-04-09T10:54:29.485846",
-    "signal": {
-      "raw_message": "1-2 DAYS Call Technical call SELL ICICIBANK FUT\u00a028 APRIL\u00a0Below 1294.40 with SL 1315 Target 1250\u00a0(ANALYST SWATI).\u00a0\u00a0 Visit our website for disclosure (Nirmal Bang).",
-      "source": "telegram",
-      "channel_id": "-1001156121763",
-      "channel_name": "Bulls Channel / Way2Laabh",
-      "timestamp": "2026-04-09T10:54:28.306995",
-      "action": "SELL",
-      "symbol": "ICICIBANK",
-      "exchange": "NFO",
-      "asset_type": "futures",
-      "strike": null,
-      "option_type": "",
-      "expiry": "28 APR",
-      "entry_price": 1294.4,
-      "entry_range": null,
-      "targets": [
-        8.0,
-        250.0,
-        1250.0
-      ],
-      "stop_loss": 1315.0,
-      "signal_type": "swing",
-      "cmp": 1293.0,
-      "confidence": 90,
-      "parse_notes": [],
-      "lot_size": 0
-    },
-    "status": "paper_executed",
-    "order_id": "PAPER-1775712269",
-    "broker": "PAPER",
-    "message": "PAPER: SELL 19x ICICIBANK @ 1294.4 | Adj Targets: [522.56, 667.76, 1267.76] | SL: 1315.0",
-    "adjusted_targets": [
-      522.56,
-      667.76,
-      1267.76
-    ],
-    "quantity": 19,
-    "capital": 24593.6,
-    "unrealized_pnl": -400.9,
-    "last_ltp": 1315.5,
-    "closed": true,
-    "exit_price": 1315.5,
-    "exit_reason": "STOP_LOSS",
-    "pnl": -400.9
-  },
-  {
-    "timestamp": "2026-04-09T11:38:48.267528",
-    "signal": {
-      "raw_message": "Trade for the day\n\nMOSt Intraday Cash  \n\nBUY GROWW  \nCMP 185.40 \nSL 181.8 \nTGT 192 \n\n\u2013 Stock surging to 4-month high amid hefty volume today",
-      "source": "whatsapp",
-      "channel_id": "120363422671480756@g.us",
-      "channel_name": "Trade And Investment With MO",
-      "timestamp": "2026-04-09T11:38:44.164977",
-      "action": "BUY",
-      "symbol": "MOST",
-      "exchange": "NSE",
-      "asset_type": "equity",
-      "strike": null,
-      "option_type": "",
-      "expiry": "",
-      "entry_price": 185.4,
-      "entry_range": null,
-      "targets": [
-        192.0
-      ],
-      "stop_loss": 181.8,
-      "signal_type": "intraday",
-      "cmp": null,
-      "confidence": 90,
-      "parse_notes": [],
-      "lot_size": 0
-    },
-    "status": "rejected",
-    "order_id": null,
-    "broker": null,
-    "message": "Max open positions reached (10)",
-    "adjusted_targets": [],
-    "quantity": 0,
-    "capital": 0
-  },
-  {
     "timestamp": "2026-04-09T11:54:31.137751",
     "signal": {
       "raw_message": "1-2 Days Technical Call Book Partial profits in PFC at 431.1-433, Target 439, BUY Call initiated at 424.4\u00a0(ANALYST YADNESH).\u00a0Visit our website for disclosure. (Nirmal Bang).",
@@ -1846,8 +1348,8 @@
     "adjusted_targets": [],
     "quantity": 500,
     "capital": 52500.0,
-    "unrealized_pnl": 40300.0,
-    "last_ltp": 185.6
+    "unrealized_pnl": 33575.0,
+    "last_ltp": 172.15
   },
   {
     "timestamp": "2026-04-10T12:44:24.943630",
@@ -3377,8 +2879,8 @@
     "adjusted_targets": [],
     "quantity": 19,
     "capital": 24365.6,
-    "unrealized_pnl": 577.6,
-    "last_ltp": 1312.8
+    "unrealized_pnl": 792.3,
+    "last_ltp": 1324.1
   },
   {
     "timestamp": "2026-04-15T09:31:39.518753",
@@ -4004,8 +3506,8 @@
     "adjusted_targets": [],
     "quantity": 1,
     "capital": 251500.0,
-    "unrealized_pnl": 251262.4,
-    "last_ltp": 237.6
+    "unrealized_pnl": 251259.6,
+    "last_ltp": 240.4
   },
   {
     "timestamp": "2026-04-15T14:40:59.270767",
@@ -4043,8 +3545,8 @@
     ],
     "quantity": 10,
     "capital": 24877.0,
-    "unrealized_pnl": 59.0,
-    "last_ltp": 2493.6
+    "unrealized_pnl": 205.0,
+    "last_ltp": 2508.2
   },
   {
     "timestamp": "2026-04-15T14:50:17.525409",
@@ -4578,8 +4080,8 @@
     ],
     "quantity": 82,
     "capital": 24903.4,
-    "unrealized_pnl": -172.2,
-    "last_ltp": 301.6
+    "unrealized_pnl": 12.3,
+    "last_ltp": 303.85
   },
   {
     "timestamp": "2026-04-16T11:26:37.538128",
@@ -4741,8 +4243,8 @@
     "adjusted_targets": [],
     "quantity": 500,
     "capital": 27250.0,
-    "unrealized_pnl": 78700.0,
-    "last_ltp": 211.9
+    "unrealized_pnl": 90850.0,
+    "last_ltp": 236.2
   },
   {
     "timestamp": "2026-04-16T14:52:11.019222",
@@ -5542,8 +5044,8 @@
     ],
     "quantity": 70,
     "capital": 24850.0,
-    "unrealized_pnl": -360.5,
-    "last_ltp": 349.85
+    "unrealized_pnl": 490.0,
+    "last_ltp": 362
   },
   {
     "timestamp": "2026-04-17T11:53:33.703271",
@@ -5751,8 +5253,8 @@
     ],
     "quantity": 281,
     "capital": 24994.95,
-    "unrealized_pnl": 95.54,
-    "last_ltp": 89.29
+    "unrealized_pnl": 413.07,
+    "last_ltp": 90.42
   },
   {
     "timestamp": "2026-04-17T13:50:09.794052",
@@ -7360,8 +6862,12 @@
       "trigger_id": 316306017
     },
     "gtt_status": "active",
-    "unrealized_pnl": -10275.0,
-    "last_ltp": 19.45
+    "unrealized_pnl": -15700.0,
+    "last_ltp": 8.6,
+    "closed": true,
+    "exit_price": 8.6,
+    "exit_reason": "STOP_LOSS",
+    "pnl": -15700.0
   },
   {
     "timestamp": "2026-04-23T10:47:02.604526",
@@ -7678,8 +7184,12 @@
       "trigger_id": 316316659
     },
     "gtt_status": "active",
-    "unrealized_pnl": -2500.0,
-    "last_ltp": 11.1
+    "unrealized_pnl": -7343.75,
+    "last_ltp": 3.35,
+    "closed": true,
+    "exit_price": 3.35,
+    "exit_reason": "STOP_LOSS",
+    "pnl": -7343.75
   },
   {
     "timestamp": "2026-04-23T11:26:48.626792",
@@ -7760,8 +7270,12 @@
       "trigger_id": 316320939
     },
     "gtt_status": "active",
-    "unrealized_pnl": -1852.5,
-    "last_ltp": 6.85
+    "unrealized_pnl": -6317.5,
+    "last_ltp": 2.15,
+    "closed": true,
+    "exit_price": 2.15,
+    "exit_reason": "STOP_LOSS",
+    "pnl": -6317.5
   },
   {
     "timestamp": "2026-04-23T12:33:59.900223",
@@ -7803,8 +7317,8 @@
       "trigger_id": 316339554
     },
     "gtt_status": "active",
-    "unrealized_pnl": -1200.0,
-    "last_ltp": 2.21
+    "unrealized_pnl": -7050.0,
+    "last_ltp": 1.04
   },
   {
     "timestamp": "2026-04-23T12:34:12.176142",
@@ -8540,5 +8054,56 @@
     ],
     "quantity": 30,
     "capital": 38100.0
+  },
+  {
+    "timestamp": "2026-04-27T09:10:12.790120",
+    "signal": {
+      "raw_message": "\ud83d\udcca 3 Things That Will Decide the Market Today\n\n\ud83d\udd34 GIFT NIFTY (Gift City Cues)\nGift Nifty up ~200 pts (+0.7%), indicating a strong opening.\nSentiment supported by global record highs + easing oil from peaks, but crude still elevated near $107/bbl keeps volatility intact.\n\n\ud83c\udf0d Macro / Global Cues \nUS markets +1% (record highs); US futures positive. Asia +2\u20132.5% (Nikkei, Kospi at record highs). Europe -0.7%. Brent crude ~ $107/bbl (+3%), gold +1% (~$4704/oz). FIIs sold \u20b98828cr, DIIs bought \u20b94700cr. Domestic sentiment positive on strong Q4 earnings (banks/NBFCs) + SEBI FPI easing, but high crude and geopolitics remain key risks.\n\n\ud83d\udcc8 Options Data & Key Levels\nOption data suggests a broader trading range between 23,400 to 24,400 zones.\n\nMotilal Oswal's Daily Fundamental & Technical picks\ud83d\udc49\n\nFundamental Picks (for more than a year)\n1. Bharat Dynamics - Target 1800 (28%)\n2. Delhivery- Target 580 (29%)\n3. MTAR Technologies- Target 4810 (17%)\n4.State Bank of India- Target 1300 (18%)\n5. TVS Motor- Target 4461 (28%)\n\nTechnical Pick -\nHINDALCO BUY\nPrevious Close : 1048\nTarget : 1133\nPotential upside : ~8%",
+      "source": "whatsapp",
+      "channel_id": "120363422671480756@g.us",
+      "channel_name": "Trade And Investment With MO",
+      "timestamp": "2026-04-27T09:10:01.424899",
+      "action": "BUY",
+      "symbol": "BANKINDIA",
+      "exchange": "NFO",
+      "asset_type": "futures",
+      "strike": null,
+      "option_type": "",
+      "expiry": "",
+      "entry_price": 107.0,
+      "entry_range": null,
+      "targets": [
+        300.0,
+        461.0,
+        700.0,
+        800.0,
+        810.0,
+        1133.0,
+        1800.0
+      ],
+      "stop_loss": null,
+      "signal_type": "intraday",
+      "cmp": null,
+      "confidence": 75,
+      "parse_notes": [
+        "No stop loss found"
+      ],
+      "lot_size": 0
+    },
+    "status": "failed",
+    "order_id": null,
+    "broker": "mstock",
+    "message": "Invalid order type. valid product types allowed are MARKET, SL-M, SL and LIMIT.",
+    "adjusted_targets": [
+      222.8,
+      319.4,
+      462.8,
+      522.8,
+      528.8,
+      722.6,
+      1122.8
+    ],
+    "quantity": 327,
+    "capital": 34989.0
   }
 ]
