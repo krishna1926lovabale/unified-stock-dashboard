@@ -1,50 +1,5 @@
 [
   {
-    "timestamp": "2026-04-09T11:54:31.137751",
-    "signal": {
-      "raw_message": "1-2 Days Technical Call Book Partial profits in PFC at 431.1-433, Target 439, BUY Call initiated at 424.4\u00a0(ANALYST YADNESH).\u00a0Visit our website for disclosure. (Nirmal Bang).",
-      "source": "telegram",
-      "channel_id": "-1001156121763",
-      "channel_name": "Bulls Channel / Way2Laabh",
-      "timestamp": "2026-04-09T11:54:29.909475",
-      "action": "BUY",
-      "symbol": "PFC",
-      "exchange": "NSE",
-      "asset_type": "equity",
-      "strike": null,
-      "option_type": "",
-      "expiry": "",
-      "entry_price": 431.1,
-      "entry_range": null,
-      "targets": [
-        439.0
-      ],
-      "stop_loss": null,
-      "signal_type": "swing",
-      "cmp": 431.2,
-      "confidence": 75,
-      "parse_notes": [
-        "No stop loss found"
-      ],
-      "lot_size": 0
-    },
-    "status": "paper_executed",
-    "order_id": "PAPER-1775715871",
-    "broker": "PAPER",
-    "message": "PAPER: BUY 57x PFC @ 431.1 | Adj Targets: [435.84] | SL: None",
-    "adjusted_targets": [
-      435.84
-    ],
-    "quantity": 57,
-    "capital": 24572.7,
-    "unrealized_pnl": 279.3,
-    "last_ltp": 436,
-    "closed": true,
-    "exit_price": 436,
-    "exit_reason": "TARGET_HIT",
-    "pnl": 279.3
-  },
-  {
     "timestamp": "2026-04-09T12:16:55.879127",
     "signal": {
       "raw_message": "4 Week Focus Idea  BUY GROWW  CMP 186.50 SL 174 TGT 212 \n\nCapital market theme stocks are witnessing strong buying interest, GROWW has given breakout from its consolidation phase with rising volumes",
@@ -1348,8 +1303,8 @@
     "adjusted_targets": [],
     "quantity": 500,
     "capital": 52500.0,
-    "unrealized_pnl": 33575.0,
-    "last_ltp": 172.15
+    "unrealized_pnl": 105500.0,
+    "last_ltp": 316
   },
   {
     "timestamp": "2026-04-10T12:44:24.943630",
@@ -2879,8 +2834,8 @@
     "adjusted_targets": [],
     "quantity": 19,
     "capital": 24365.6,
-    "unrealized_pnl": 792.3,
-    "last_ltp": 1324.1
+    "unrealized_pnl": 801.8,
+    "last_ltp": 1324.6
   },
   {
     "timestamp": "2026-04-15T09:31:39.518753",
@@ -3506,8 +3461,8 @@
     "adjusted_targets": [],
     "quantity": 1,
     "capital": 251500.0,
-    "unrealized_pnl": 251259.6,
-    "last_ltp": 240.4
+    "unrealized_pnl": 251265.6,
+    "last_ltp": 234.4
   },
   {
     "timestamp": "2026-04-15T14:40:59.270767",
@@ -3545,8 +3500,8 @@
     ],
     "quantity": 10,
     "capital": 24877.0,
-    "unrealized_pnl": 205.0,
-    "last_ltp": 2508.2
+    "unrealized_pnl": 451.0,
+    "last_ltp": 2532.8
   },
   {
     "timestamp": "2026-04-15T14:50:17.525409",
@@ -4080,8 +4035,8 @@
     ],
     "quantity": 82,
     "capital": 24903.4,
-    "unrealized_pnl": 12.3,
-    "last_ltp": 303.85
+    "unrealized_pnl": 61.5,
+    "last_ltp": 304.45
   },
   {
     "timestamp": "2026-04-16T11:26:37.538128",
@@ -4243,8 +4198,8 @@
     "adjusted_targets": [],
     "quantity": 500,
     "capital": 27250.0,
-    "unrealized_pnl": 90850.0,
-    "last_ltp": 236.2
+    "unrealized_pnl": 100175.0,
+    "last_ltp": 254.85
   },
   {
     "timestamp": "2026-04-16T14:52:11.019222",
@@ -5044,8 +4999,8 @@
     ],
     "quantity": 70,
     "capital": 24850.0,
-    "unrealized_pnl": 490.0,
-    "last_ltp": 362
+    "unrealized_pnl": 546.0,
+    "last_ltp": 362.8
   },
   {
     "timestamp": "2026-04-17T11:53:33.703271",
@@ -5253,8 +5208,8 @@
     ],
     "quantity": 281,
     "capital": 24994.95,
-    "unrealized_pnl": 413.07,
-    "last_ltp": 90.42
+    "unrealized_pnl": 547.95,
+    "last_ltp": 90.9
   },
   {
     "timestamp": "2026-04-17T13:50:09.794052",
@@ -7317,8 +7272,12 @@
       "trigger_id": 316339554
     },
     "gtt_status": "active",
-    "unrealized_pnl": -7050.0,
-    "last_ltp": 1.04
+    "unrealized_pnl": -8250.0,
+    "last_ltp": 0.8,
+    "closed": true,
+    "exit_price": 0.8,
+    "exit_reason": "STOP_LOSS",
+    "pnl": -8250.0
   },
   {
     "timestamp": "2026-04-23T12:34:12.176142",
@@ -8105,5 +8064,123 @@
     ],
     "quantity": 327,
     "capital": 34989.0
+  },
+  {
+    "timestamp": "2026-04-28T09:05:22.425377",
+    "signal": {
+      "raw_message": "\ud83d\udcca 3 Things That Will Decide the Market Today\n\n\ud83d\udd34 GIFT NIFTY (Gift City Cues)\nGift Nifty slightly negative (~-0.3%), indicating a soft start.\nSentiment cautious due to crude near $109/bbl + F&O expiry, though strong global markets limit downside\n\n\ud83c\udf0d Macro / Global Cues \nUS markets at record highs (S&P/Nasdaq); US futures marginally positive. Asia mixed ahead of BoJ policy. Europe -0.3%. Brent crude ~ $109/bbl (+3%), gold steady ~$4685/oz. FIIs sold \u20b91151cr, DIIs bought \u20b94124cr. Domestic sentiment supported by strong Q4 earnings (cement, PSU, consumption) but capped by high crude, expiry volatility, and ongoing US\u2013Iran uncertainty.\n\n\ud83d\udcc8 Options Data & Key Levels\nOption data suggests a broader trading range between 23,600 to 24,600 zones while an immediate range between 23,800 and 24,300 levels.\n\nMotilal Oswal's Daily Fundamental & Technical picks\ud83d\udc49\n\nFundamental Picks (for more than a year)\n1.Bharat Dynamics - Target 1800 (29%)\n2.Delhivery- Target 580 (25%)\n3.MTAR Technologies- Target 4810 (12%)\n4.State Bank of India- Target 1300 (17%)\n5. TVS Motor- Target 4461 (25%)\n\nTechnical Pick -\nSARDAEN BUY\nPrevious Close : 613\nTarget : 655\nPotential upside : ~7%",
+      "source": "whatsapp",
+      "channel_id": "120363422671480756@g.us",
+      "channel_name": "Trade And Investment With MO",
+      "timestamp": "2026-04-28T09:05:01.700760",
+      "action": "BUY",
+      "symbol": "BANKINDIA",
+      "exchange": "NFO",
+      "asset_type": "futures",
+      "strike": null,
+      "option_type": "",
+      "expiry": "",
+      "entry_price": 24100.0,
+      "entry_range": [
+        23600.0,
+        24600.0
+      ],
+      "targets": [],
+      "stop_loss": null,
+      "signal_type": "intraday",
+      "cmp": null,
+      "confidence": 60,
+      "parse_notes": [
+        "No valid targets found",
+        "No stop loss found"
+      ],
+      "lot_size": 0
+    },
+    "status": "error",
+    "order_id": null,
+    "broker": "mstock",
+    "message": "name '_send_telegram' is not defined",
+    "adjusted_targets": [],
+    "quantity": 1,
+    "capital": 24100.0
+  },
+  {
+    "timestamp": "2026-04-28T09:16:13.331944",
+    "signal": {
+      "raw_message": "ULTRACEMCO 12500 CE - MAY EXP\n\nBUY ABOVE 301\n\nTARGET 320/350/400++\n\nSL 270",
+      "source": "whatsapp",
+      "channel_id": "120363422671480756@g.us",
+      "channel_name": "Trade And Investment With MO",
+      "timestamp": "2026-04-28T09:16:12.551608",
+      "action": "BUY",
+      "symbol": "ULTRACEMCO",
+      "exchange": "NFO",
+      "asset_type": "options",
+      "strike": 12500.0,
+      "option_type": "CE",
+      "expiry": "",
+      "entry_price": 301.0,
+      "entry_range": null,
+      "targets": [
+        320.0,
+        350.0,
+        400.0
+      ],
+      "stop_loss": 270.0,
+      "signal_type": "intraday",
+      "cmp": null,
+      "confidence": 100,
+      "parse_notes": [],
+      "lot_size": 0
+    },
+    "status": "error",
+    "order_id": null,
+    "broker": "mstock",
+    "message": "name '_send_telegram' is not defined",
+    "adjusted_targets": [
+      312.4,
+      330.4,
+      360.4
+    ],
+    "quantity": 100,
+    "capital": 30100.0
+  },
+  {
+    "timestamp": "2026-04-28T10:19:36.129391",
+    "signal": {
+      "raw_message": "*SENSEX 77700 CE* - 30 APR\n\nBUY ABOVE -355\nSL 310\nTARGET 380/400/455++",
+      "source": "whatsapp",
+      "channel_id": "120363422671480756@g.us",
+      "channel_name": "Trade And Investment With MO",
+      "timestamp": "2026-04-28T10:19:35.299193",
+      "action": "BUY",
+      "symbol": "SENSEX",
+      "exchange": "NFO",
+      "asset_type": "options",
+      "strike": 77700.0,
+      "option_type": "CE",
+      "expiry": "30 APR",
+      "entry_price": null,
+      "entry_range": null,
+      "targets": [
+        80.0,
+        380.0,
+        400.0,
+        455.0
+      ],
+      "stop_loss": 310.0,
+      "signal_type": "intraday",
+      "cmp": null,
+      "confidence": 90,
+      "parse_notes": [],
+      "lot_size": 0
+    },
+    "status": "rejected",
+    "order_id": null,
+    "broker": null,
+    "message": "Incomplete signal (missing action/symbol/price)",
+    "adjusted_targets": [],
+    "quantity": 0,
+    "capital": 0
   }
 ]
